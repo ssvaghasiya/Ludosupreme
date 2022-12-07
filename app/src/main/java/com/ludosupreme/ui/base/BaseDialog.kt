@@ -48,7 +48,6 @@ abstract class BaseDialog : DialogFragment(), HasComponent<DialogComponent> {
 //        if (this is RenameDialogLive) {
         isCancelable = true
         dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent)
-        dialog?.window?.attributes!!.windowAnimations = R.style.DialogAnimationwithFade
 //        } else {
 //            dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
 //            dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent)

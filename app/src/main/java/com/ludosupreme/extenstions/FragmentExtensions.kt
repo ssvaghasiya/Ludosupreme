@@ -159,7 +159,7 @@ fun Fragment.showErrorMessage(message: String?) {
         Alerter.create(requireActivity())
             .setTitle(it)
             .setBackgroundColorRes(R.color.green)
-            .setTextTypeface(ResourcesCompat.getFont(requireContext(), R.font.pangram_bold)!!)
+            .setTextTypeface(ResourcesCompat.getFont(requireContext(), R.font.poppins_bold)!!)
             .setDuration(2000)
             .hideIcon()
             .show()

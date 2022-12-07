@@ -3,13 +3,17 @@ package com.ludosupreme.ui.home.activity
 import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
+import androidx.core.view.ViewCompat
 import com.ludosupreme.R
 import com.ludosupreme.databinding.HomeActivityBinding
 import com.ludosupreme.di.component.ActivityComponent
+import com.ludosupreme.extenstions.setMarginTop
 import com.ludosupreme.extenstions.updateStatusBarColor
 import com.ludosupreme.ui.base.BaseActivity
+import com.ludosupreme.ui.home.fragment.SecondFragment
 import com.ludosupreme.utils.Constant
 import com.ludosupreme.utils.Constant.PassValue.NOTIFICATION_CLICK
+import com.ludosupreme.utils.Debug
 
 
 class HomeActivity : BaseActivity(), View.OnClickListener {
@@ -28,13 +32,10 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        updateStatusBarColor(R.color.backgroundColor)
-        load(HomeFragment::class.java).setBundle(
-            bundleOf(NOTIFICATION_CLICK to intent.getStringExtra(Constant.PassValue.NOTIFICATION_CLICK))
-        ).add(false)
-
+        Debug.e("Home==")
         initView()
         setOnClickListener()
+        load(SecondFragment::class.java).add(false)
     }
 
     private fun initView() {
@@ -43,21 +44,12 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
 
     private fun setOnClickListener() {
         binding.apply {
-            linearSettings.setOnClickListener(this@HomeActivity)
-            linearRecipient.setOnClickListener(this@HomeActivity)
-            imageViewAudio.setOnClickListener(this@HomeActivity)
         }
     }
 
     override fun onClick(p0: View?) {
         when (p0?.id) {
-            R.id.linearSettings -> {
-            }
-            R.id.linearRecipient -> {
 
-            }
-            R.id.imageViewAudio -> {
-            }
 
         }
     }
@@ -67,5 +59,18 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
         finish()
     }
 
+    fun setMarginZero() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.coordinatorLayout) { _, insets ->
+            binding.coordinatorLayout.setMarginTop(0)
+            insets.consumeSystemWindowInsets()
+        }
+    }
+
+    fun setMargin() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.coordinatorLayout) { _, insets ->
+            binding.coordinatorLayout.setMarginTop(insets.systemWindowInsetTop)
+            insets.consumeSystemWindowInsets()
+        }
+    }
 
 }

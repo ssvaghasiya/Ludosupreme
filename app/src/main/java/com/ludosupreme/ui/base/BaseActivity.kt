@@ -63,10 +63,6 @@ abstract class BaseActivity : AppCompatActivity(), HasComponent<ActivityComponen
 
     private var isBack = false
 
-    private var customLoaderDialog: CustomLoaderDialog? = null
-
-    private var isCustomLoaderShowing: Boolean = false
-
     //protected var toolbar: Toolbar? = null
     //protected var toolbarTitle: AppCompatTextView? = null
     internal var progressDialog: ProgressDialog? = null
@@ -75,17 +71,12 @@ abstract class BaseActivity : AppCompatActivity(), HasComponent<ActivityComponen
     private lateinit var activityComponent: ActivityComponent
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        customLoaderDialog =
-            CustomLoaderDialog(resources.getString(R.string.label_loading_please_wait))
-
         activityComponent = DaggerActivityComponent.builder()
             .bindApplicationComponent(Injector.INSTANCE.applicationComponent)
             .bindActivity(this)
             .build()
 
         inject(activityComponent)
-
-
 
         setContentView(findContentView())
         bindViewWithViewBinding((findViewById<ViewGroup>(android.R.id.content)).getChildAt(0))
@@ -101,7 +92,6 @@ abstract class BaseActivity : AppCompatActivity(), HasComponent<ActivityComponen
         if (actionbar != null) {
             actionbar.setDisplayHomeAsUpEnabled(true)
             actionbar.setDisplayShowTitleEnabled(false)
-            actionbar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white)
         }
 
         setUpAlertDialog()
@@ -153,7 +143,7 @@ abstract class BaseActivity : AppCompatActivity(), HasComponent<ActivityComponen
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
-    /*fun toggleLoader(show: Boolean) {
+    fun toggleLoader(show: Boolean) {
 
         if (show) {
             if (!progressDialog!!.isShowing)
@@ -162,28 +152,8 @@ abstract class BaseActivity : AppCompatActivity(), HasComponent<ActivityComponen
             if (progressDialog!!.isShowing)
                 progressDialog!!.dismiss()
         }
-    }*/
-
-    fun toggleLoader(
-        show: Boolean,
-        message: String = resources.getString(R.string.label_loading_please_wait)
-    ) {
-
-        if (show) {
-            if (!isCustomLoaderShowing) {
-                isCustomLoaderShowing = true
-
-                customLoaderDialog = CustomLoaderDialog(message)
-                customLoaderDialog?.show(supportFragmentManager, "")
-
-            }
-        } else {
-            if (isCustomLoaderShowing) {
-                isCustomLoaderShowing = false
-                customLoaderDialog?.dismiss()
-            }
-        }
     }
+
 
     protected fun shouldGoBack(): Boolean {
         return true
@@ -354,7 +324,6 @@ abstract class BaseActivity : AppCompatActivity(), HasComponent<ActivityComponen
         val supportActionBar = supportActionBar
         if (b) {
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
-            supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white)
         } else {
             supportActionBar?.setDisplayHomeAsUpEnabled(false)
         }

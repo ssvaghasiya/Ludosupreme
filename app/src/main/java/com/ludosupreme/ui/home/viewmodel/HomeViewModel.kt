@@ -13,14 +13,6 @@ class HomeViewModel @Inject constructor(private val userRepository: UserReposito
     val getNotificationLiveData = APILiveData<NotificationData>()
     val bannerListLiveData = APILiveData<List<PosterData>>()
 
-    fun getNotification(data: ApiRequestData) {
-        userRepository.getNotification(data)
-            .subscribe(withLiveData(getNotificationLiveData))
-    }
 
-    fun bannerList() {
-        userRepository.bannerList()
-            .subscribe(withLiveData(bannerListLiveData))
-    }
 
 }

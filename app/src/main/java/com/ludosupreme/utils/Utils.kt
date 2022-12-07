@@ -195,21 +195,6 @@ object Utils {
     }
 
 
-    fun audioToByteArray(context: Context): ByteArray? {
-        var soundBytes: ByteArray? = null
-        try {
-            val inputStream: InputStream =
-                context.resources.openRawResource(R.raw.song)
-            soundBytes = ByteArray(inputStream.available())
-            soundBytes = IOUtils.toByteArray(inputStream)
-        } catch (e: FileNotFoundException) {
-            e.printStackTrace()
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-        return soundBytes
-    }
-
     fun openTimeFragment(context: Context) {
         val mTimePicker: TimePickerDialog
         val c = Calendar.getInstance()
@@ -465,58 +450,4 @@ object Utils {
         return ageInt.toString()
     }
 
-    fun getRelationShipList(mContext: Context): ArrayList<String> {
-        val list = ArrayList<String>()
-        list.add(mContext.getString(R.string.label_son))
-        list.add(mContext.getString(R.string.label_son_daughter))
-        list.add(mContext.getString(R.string.label_son_aunt))
-        list.add(mContext.getString(R.string.label_son_uncle))
-        list.add(mContext.getString(R.string.label_son_friend))
-        list.add(mContext.getString(R.string.label_grandparent))
-        list.add(mContext.getString(R.string.label_parent))
-        return list
-    }
-
-    fun saveBitmapToFile(file: File): File? {
-        return try {
-
-            // BitmapFactory options to downsize the image
-            val o = BitmapFactory.Options()
-            o.inJustDecodeBounds = true
-            o.inSampleSize = 6
-            // factor of downsizing the image
-            var inputStream = FileInputStream(file)
-            //Bitmap selectedBitmap = null;
-            BitmapFactory.decodeStream(inputStream, null, o)
-            inputStream.close()
-
-            // The new size we want to scale to
-            val REQUIRED_SIZE = 75
-
-            // Find the correct scale value. It should be the power of 2.
-            var scale = 1
-            while (o.outWidth / scale / 2 >= REQUIRED_SIZE &&
-                o.outHeight / scale / 2 >= REQUIRED_SIZE
-            ) {
-                scale *= 2
-            }
-            val o2 = BitmapFactory.Options()
-            o2.inSampleSize = scale
-            inputStream = FileInputStream(file)
-            val selectedBitmap = BitmapFactory.decodeStream(inputStream, null, o2)
-            inputStream.close()
-
-            // here i override the original image file
-            file.createNewFile()
-            val outputStream = FileOutputStream(file)
-            selectedBitmap!!.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
-            file
-        } catch (e: java.lang.Exception) {
-            null
-        }
-    }
-
-    fun stringToWords(s: String) = s.trim().splitToSequence(',')
-        .filter { it.isNotEmpty() } // or: .filter { it.isNotBlank() }
-        .toList()
 }

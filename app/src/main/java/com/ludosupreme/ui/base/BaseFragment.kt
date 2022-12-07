@@ -205,7 +205,7 @@ abstract class BaseFragment : Fragment(), HasComponent<FragmentComponent> {
             val shareIntent = Intent(Intent.ACTION_SEND)
             shareIntent.type = "text/plain"
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name))
-            val msg = getString(R.string.label_app_share_msg)
+            val msg = ""
             val shareMessage =
                 """
                 ${msg}https://play.google.com/store/apps/details?id=${BuildConfig.APPLICATION_ID}

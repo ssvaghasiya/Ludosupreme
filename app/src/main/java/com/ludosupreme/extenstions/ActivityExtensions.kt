@@ -137,7 +137,7 @@ fun Activity.showErrorMsg(message: String?) {
         Alerter.create(this)
             .setTitle(it)
             .setBackgroundColorRes(R.color.green)
-            .setTextTypeface(ResourcesCompat.getFont(this, R.font.pangram_bold)!!)
+            .setTextTypeface(ResourcesCompat.getFont(this, R.font.poppins_bold)!!)
             .setDuration(2000)
             .hideIcon()
             .show()

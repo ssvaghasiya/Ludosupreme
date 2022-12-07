@@ -42,8 +42,6 @@ class AuthenticationActivity : BaseActivity() {
             } else {
                 load(SplashFragment::class.java).replace(false)
             }
-
-
         } else {
             load(SplashFragment::class.java).replace(false)
         }

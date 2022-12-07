@@ -6,12 +6,36 @@
     android:layout_height="match_parent"
     android:background="@drawable/ic_bg">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineStart"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewWithdraw"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:src="@drawable/ic_withdrawal"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewLudo"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintTop_toTopOf="@+id/textViewLudo" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewLine"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="@dimen/_12sdp" />
+        android:layout_marginTop="@dimen/_6sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLudo" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLudo"
+        style="@style/TextView.Medium.ssp_18.white"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_10sdp"
+        android:text="LUDO SUPREME"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewWithdraw"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineEnd"
@@ -20,6 +44,27 @@
         android:orientation="vertical"
         app:layout_constraintGuide_end="@dimen/_12sdp" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/_12sdp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewLudo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:scrollbars="none"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLine"
+        tools:itemCount="15"
+        tools:listitem="@layout/second_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -117,25 +117,12 @@ class LoginFragment : BaseFragment(), View.OnClickListener {
 
     private fun isValidate(): Boolean {
         try {
-            validator.apply {
-                submit(binding.editTextEmail)
-                    .checkEmpty().errorMessage(getString(R.string.validation_please_enter_email))
-                    .checkValidEmail().errorMessage(getString(R.string.validation_invalid_email))
-                    .check()
-
-                submit(binding.editTextPassword)
-                    .checkEmpty()
-                    .errorMessage(getString(R.string.validation_please_enter_password))
-                    //.checkMinDigits(6).errorMessage(getString(R.string.validation_please_enter_valid_password))
-                    .check()
-
-                return true
-            }
 
         } catch (e: ApplicationException) {
             showErrorMessage(e.message)
             return false
         }
+        return true
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -12,6 +12,7 @@ import com.ludosupreme.di.component.FragmentComponent
 import com.ludosupreme.ui.authentication.viewmodel.AuthenticationViewModel
 import com.ludosupreme.ui.base.BaseFragment
 import com.ludosupreme.ui.home.activity.HomeActivity
+import com.ludosupreme.ui.home.fragment.SecondFragment
 import com.ludosupreme.utils.Constant.SignUpType.IS_INTRO
 import com.ludosupreme.utils.Debug
 import com.ludosupreme.utils.Utils.getHashKey
@@ -34,8 +35,6 @@ class SplashFragment : BaseFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        getCredentialsDataObserver()
-        callGetCredentials()
     }
 
 
@@ -53,8 +52,18 @@ class SplashFragment : BaseFragment() {
     override fun bindData() {
         toolbar.showToolbar(false)
         getHashKey(requireContext())
+        countDownTimer = object : CountDownTimer(3000, 1000) {
+            override fun onFinish() {
+                if (session.user == null) {
+                    navigator.loadActivity(HomeActivity::class.java).byFinishingCurrent().start()
+                } else {
+                    navigator.loadActivity(HomeActivity::class.java).byFinishingCurrent().start()
+                }
+            }
 
-
+            override fun onTick(millisUntilFinished: Long) {
+            }
+        }
 
     }
 
@@ -71,23 +80,4 @@ class SplashFragment : BaseFragment() {
         super.onPause()
         countDownTimer?.cancel()
     }
-
-
-    private fun callGetCredentials() {
-        authenticationViewModel.getCredentials()
-    }
-
-
-    private fun getCredentialsDataObserver() {
-        authenticationViewModel.getCredentialsLiveData.observe(this, { responseBody ->
-            Debug.e("Success...  " + responseBody.responseCode)
-            session.credential = responseBody.data
-        }
-        )
-        { throwable, response ->
-            Debug.e(throwable.message)
-            false
-        }
-    }
-
 }
