@@ -1,0 +1,959 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.Authentication">
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+        <item name="android:statusBarColor">@color/white</item>
+    </style>
+
+    <style name="AppTheme.FullScreen.Splash">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+    S
+
+    <style name="AppTheme.FullScreen">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowActionBar">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <style name="TextView">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:gravity">start</item>
+    </style>
+
+    <style name="TextView.Bold">
+        <item name="android:fontFamily">@font/pangram_bold</item>
+    </style>
+
+
+    <style name="TextView.Bold.ssp_10">
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+    <style name="TextView.Bold.ssp_10.yellowDark">
+        <item name="android:textColor">@color/yellowDark</item>
+    </style>
+
+    <style name="TextView.Bold.ssp_10.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="TextView.Bold.ssp_11">
+        <item name="android:textSize">@dimen/_11ssp</item>
+    </style>
+
+    <style name="TextView.Bold.ssp_11.yellowDark">
+        <item name="android:textColor">@color/yellowDark</item>
+    </style>
+
+    <style name="TextView.Bold.ssp_12">
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="TextView.Bold.ssp_12.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="TextView.Bold.ssp_12.yellowDark">
+        <item name="android:textColor">@color/yellowDark</item>
+    </style>
+
+
+    <style name="TextView.Bold.ssp_12.MyTextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/_13sdp</item>
+        <item name="android:paddingBottom">@dimen/_13sdp</item>
+        <item name="android:paddingStart">@dimen/_10sdp</item>
+        <item name="android:paddingEnd">@dimen/_14sdp</item>
+        <item name="android:drawablePadding">@dimen/_11sdp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textAlignment">gravity</item>
+    </style>
+
+    <style name="TextView.Bold.ssp_13">
+        <item name="android:textSize">@dimen/_13ssp</item>
+    </style>
+
+    <style name="TextView.Bold.ssp_13.yellowDark">
+        <item name="android:textColor">@color/yellowDark</item>
+    </style>
+
+    <style name="TextView.Bold.ssp_14">
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <style name="TextView.Bold.ssp_14.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Bold.ssp_14.yellowDark">
+        <item name="android:textColor">@color/yellowDark</item>
+    </style>
+
+    <style name="TextView.Bold.ssp_15">
+        <item name="android:textSize">@dimen/_16ssp</item>
+    </style>
+
+    <style name="TextView.Bold.ssp_15.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Bold.ssp_16">
+        <item name="android:textSize">@dimen/_16ssp</item>
+    </style>
+
+    <style name="TextView.Bold.ssp_16.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Bold.ssp_18">
+        <item name="android:textSize">@dimen/_18ssp</item>
+    </style>
+
+
+    <style name="TextView.Bold.ssp_18.yellowDark">
+        <item name="android:textColor">@color/yellowDark</item>
+    </style>
+
+    <style name="TextView.Bold.ssp_18.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Bold.ssp_20">
+        <item name="android:textSize">@dimen/_20ssp</item>
+    </style>
+
+    <style name="TextView.Bold.ssp_20.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Bold.ssp_20.yellowDark">
+        <item name="android:textColor">@color/yellowDark</item>
+    </style>
+
+    <style name="TextView.ExtraBold">
+        <item name="android:fontFamily">@font/pangram_extrabold</item>
+    </style>
+
+    <style name="TextView.ExtraBold.ssp_12">
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="TextView.ExtraBold.ssp_12.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.ExtraBold.ssp_14">
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <style name="TextView.ExtraBold.ssp_14.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.ExtraBold.ssp_16">
+        <item name="android:textSize">@dimen/_16ssp</item>
+    </style>
+
+    <style name="TextView.ExtraBold.ssp_16.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.ExtraBold.ssp_16.yellowDark">
+        <item name="android:textColor">@color/yellowDark</item>
+    </style>
+
+
+    <style name="TextView.ExtraBold.ssp_18">
+        <item name="android:textSize">@dimen/_18ssp</item>
+    </style>
+
+
+    <style name="TextView.ExtraBold.ssp_18.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.ExtraBold.ssp_18.yellowDark">
+        <item name="android:textColor">@color/yellowDark</item>
+    </style>
+
+
+    <style name="TextView.ExtraBold.ssp_20">
+        <item name="android:textSize">@dimen/_20ssp</item>
+    </style>
+
+
+    <style name="TextView.ExtraBold.ssp_20.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.ExtraBold.ssp_21">
+        <item name="android:textSize">@dimen/_21ssp</item>
+    </style>
+
+
+    <style name="TextView.ExtraBold.ssp_21.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.ExtraBold.ssp_22">
+        <item name="android:textSize">@dimen/_22ssp</item>
+    </style>
+
+
+    <style name="TextView.ExtraBold.ssp_22.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.ExtraBold.ssp_24">
+        <item name="android:textSize">@dimen/_24ssp</item>
+    </style>
+
+    <style name="TextView.ExtraBold.ssp_24.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="TextView.Regular">
+        <item name="android:fontFamily">@font/pangram_regular</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_8">
+        <item name="android:textSize">@dimen/_8ssp</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_8.grey">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_8.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="TextView.Regular.ssp_10">
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_10.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_10.grey">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_10.greyLight">
+        <item name="android:textColor">@color/greyLight</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_11">
+        <item name="android:textSize">@dimen/_11ssp</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_11.grey">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_11.greyLight">
+        <item name="android:textColor">@color/greyLight</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_11.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_12">
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_12.grey">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_12.greyLight">
+        <item name="android:textColor">@color/greyLight</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_12.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_14">
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_14.grey">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_14.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_12.MyTextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/_13sdp</item>
+        <item name="android:paddingBottom">@dimen/_13sdp</item>
+        <item name="android:paddingStart">@dimen/_10sdp</item>
+        <item name="android:paddingEnd">@dimen/_14sdp</item>
+        <item name="android:drawablePadding">@dimen/_11sdp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textAlignment">gravity</item>
+    </style>
+
+
+    <style name="TextView.Regular.ssp_12.grey.CheckBox">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:buttonTint">@color/yellowDark</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:paddingStart">@dimen/_8sdp</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_12.grey.RadioRetailStore">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:buttonTint">@color/white</item>
+        <item name="android:buttonTintMode">multiply</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">@dimen/_6sdp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+
+    </style>
+
+    <style name="TextView.Regular.ssp_16">
+        <item name="android:textSize">@dimen/_16ssp</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_16.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="TextView.Regular.ssp_18">
+        <item name="android:textSize">@dimen/_18ssp</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_18.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_20">
+        <item name="android:textSize">@dimen/_20ssp</item>
+    </style>
+
+    <style name="TextView.Regular.ssp_20.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.ExtraLight">
+        <item name="android:fontFamily">@font/pangram_extralight</item>
+    </style>
+
+    <style name="TextView.ExtraLight.ssp_12">
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="TextView.ExtraLight.ssp_12.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Light">
+        <item name="android:fontFamily">@font/pangram_light</item>
+    </style>
+
+    <style name="TextView.Light.ssp_9">
+        <item name="android:textSize">@dimen/_9ssp</item>
+    </style>
+
+    <style name="TextView.Light.ssp_9.grey">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="TextView.Light.ssp_9.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="TextView.Light.ssp_10">
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+    <style name="TextView.Light.ssp_10.grey">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="TextView.Light.ssp_10.greyLight">
+        <item name="android:textColor">@color/greyLight</item>
+    </style>
+
+
+    <style name="TextView.Light.ssp_10.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Light.ssp_11">
+        <item name="android:textSize">@dimen/_11ssp</item>
+    </style>
+
+    <style name="TextView.Light.ssp_11.grey">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="TextView.Light.ssp_11.greyLight">
+        <item name="android:textColor">@color/greyLight</item>
+    </style>
+
+    <style name="TextView.Light.ssp_11.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Light.ssp_12">
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="TextView.Light.ssp_12.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Light.ssp_12.grey">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="TextView.Light.ssp_12.greyLight">
+        <item name="android:textColor">@color/greyLight</item>
+    </style>
+
+    <style name="TextView.Light.ssp_12.green">
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="TextView.Light.ssp_14">
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <style name="TextView.Light.ssp_14.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Light.ssp_16">
+        <item name="android:textSize">@dimen/_16ssp</item>
+    </style>
+
+    <style name="TextView.Light.ssp_16.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Medium">
+        <item name="android:fontFamily">@font/pangram_medium</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_8">
+        <item name="android:textSize">@dimen/_8ssp</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_8.grey">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_8.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_8.yellowDark">
+        <item name="android:textColor">@color/yellowDark</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_9">
+        <item name="android:textSize">@dimen/_9ssp</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_9.grey">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_10">
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_10.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_10.yellowDark">
+        <item name="android:textColor">@color/yellowDark</item>
+    </style>
+
+
+    <style name="TextView.Medium.ssp_10.greenLight">
+        <item name="android:textColor">@color/greenLight</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_10.green">
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_11">
+        <item name="android:textSize">@dimen/_11ssp</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_11.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="TextView.Medium.ssp_11.green">
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_12">
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_12.red">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_12.grey">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_12.yellowExtraDark">
+        <item name="android:textColor">@color/yellowExtraDark</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_12.greenDark">
+        <item name="android:textColor">@color/greenDark</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_12.yellowDark">
+        <item name="android:textColor">@color/yellowDark</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_12.green">
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_12.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_13">
+        <item name="android:textSize">@dimen/_13ssp</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_13.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_13.grey">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_13.greyLight">
+        <item name="android:textColor">@color/greyLight</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_13.greenDark">
+        <item name="android:textColor">@color/greenDark</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_13.yellowDark">
+        <item name="android:textColor">@color/yellowDark</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_14">
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_14.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_14.grey">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_14.green">
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+
+    <style name="TextView.Medium.ssp_14.yellowDark">
+        <item name="android:textColor">@color/yellowDark</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_18">
+        <item name="android:textSize">@dimen/_18ssp</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_18.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <!-- Button Style Start Here-->
+    <style name="Widget.BaseAppButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Button" parent="Base.Widget.AppCompat.Button.Small">
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+
+    <style name="Button.Bold">
+        <item name="android:fontFamily">@font/pangram_bold</item>
+    </style>
+
+
+    <style name="Button.Medium">
+        <item name="android:fontFamily">@font/pangram_medium</item>
+    </style>
+
+    <style name="Button.Medium.ssp_10">
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+    <style name="Button.Medium.ssp_10.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="Button.Medium.ssp_12">
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="Button.Medium.ssp_12.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="Button.Medium.ssp_12.white.AuthLoginButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/_14sdp</item>
+        <item name="android:paddingBottom">@dimen/_14sdp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Button.Medium.ssp_12.white.AuthSignupButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/_12sdp</item>
+        <item name="android:paddingBottom">@dimen/_12sdp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Button.Regular">
+        <item name="android:fontFamily">@font/pangram_regular</item>
+    </style>
+
+    <style name="Button.Regular.ssp_12">
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="Button.Regular.ssp_12.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Button.Regular.ssp_12.white.AuthSocial">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/_13sdp</item>
+        <item name="android:paddingBottom">@dimen/_13sdp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:paddingStart">@dimen/_16sdp</item>
+        <item name="android:paddingEnd">@dimen/_16sdp</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:drawablePadding">@dimen/_10sdp</item>
+    </style>
+
+
+    <style name="EditText">
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:gravity">start</item>
+    </style>
+
+    <style name="EditText.Medium">
+        <item name="android:fontFamily">@font/pangram_medium</item>
+    </style>
+
+    <style name="EditText.Medium.ssp_12">
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="EditText.Medium.ssp_12.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="EditText.Medium.ssp_12.white.MyEditText">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="EditText.Medium.ssp_12.white.MyEdit">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingTop">@dimen/_8sdp</item>
+        <item name="android:paddingBottom">@dimen/_8sdp</item>
+        <item name="android:drawablePadding">@dimen/_10sdp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="EditText.Regular">
+        <item name="android:fontFamily">@font/pangram_regular</item>
+    </style>
+
+    <style name="EditText.Regular.ssp_0">
+        <item name="android:textSize">0sp</item>
+    </style>
+
+    <style name="EditText.Regular.ssp_12">
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="EditText.Regular.ssp_12.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="EditText.Regular.ssp_12.grey">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="EditText.Regular.ssp_12.white.MyEditText">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingTop">@dimen/_26sdp</item>
+    </style>
+
+    <style name="EditText.Regular.ssp_12.MyEdit" parent="@android:style/Widget.EditText">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingTop">@dimen/_8sdp</item>
+        <item name="android:paddingBottom">@dimen/_8sdp</item>
+        <item name="android:drawablePadding">@dimen/_10sdp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+
+    <style name="EditText.Regular.ssp_0.MyEditTextThemeOTP">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:cursorVisible">false</item>
+        <item name="android:background">@null</item>
+        <item name="android:paddingTop">@dimen/_21sdp</item>
+        <item name="android:paddingBottom">@dimen/_21sdp</item>
+        <item name="android:paddingStart">@dimen/_18sdp</item>
+        <item name="android:paddingEnd">@dimen/_18sdp</item>
+    </style>
+
+    <style name="EditText.Bold">
+        <item name="android:fontFamily">@font/pangram_bold</item>
+    </style>
+
+    <style name="EditText.Bold.ssp_12">
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="EditText.Bold.ssp_12.MyEditText">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="TextInputLayoutAppearance" parent="Widget.Design.TextInputLayout">
+        <!-- reference our hint & error styles -->
+        <item name="hintTextAppearance">@style/HintText</item>
+        <item name="errorTextAppearance">@style/ErrorText</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="colorControlNormal">@color/black</item>
+        <item name="colorControlActivated">@color/grey</item>
+        <item name="colorControlHighlight">@color/black</item>
+    </style>
+
+    <style name="TextInputLayout">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/_10sdp</item>
+        <item name="android:paddingEnd">@dimen/_10sdp</item>
+        <item name="android:paddingTop">@dimen/_5sdp</item>
+        <item name="android:paddingBottom">@dimen/_5sdp</item>
+        <item name="android:theme">@style/TextInputLayoutAppearance</item>
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="boxBackgroundMode">filled</item>
+        <item name="boxStrokeColor">@color/white</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+    </style>
+
+
+    <style name="Widget.Custom.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="boxStrokeColor">@color/transparent</item>
+        <item name="boxBackgroundMode">filled</item>
+        <item name="android:paddingTop">@dimen/_4sdp</item>
+        <item name="android:paddingBottom">@dimen/_5sdp</item>
+        <item name="android:paddingStart">@dimen/_8sdp</item>
+        <item name="android:paddingEnd">@dimen/_8sdp</item>
+        <item name="hintTextColor">@color/greyLight</item>
+        <item name="android:textColorHint">@color/greyLight</item>
+        <item name="colorControlNormal">@color/greyLight</item>
+        <item name="colorControlHighlight">@color/greyLight</item>
+    </style>
+
+    <!--For TextInputLayout-->
+    <style name="Widget.Theme.EditText" parent="@android:style/Widget.EditText">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:fontFamily">@font/pangram_regular</item>
+    </style>
+
+    <style name="Widget.CustomDropdownMenu.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="boxStrokeColor">@color/transparent</item>
+        <item name="boxBackgroundMode">filled</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="hintTextColor">@color/grey</item>
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="colorControlNormal">@color/grey</item>
+        <item name="colorControlHighlight">@color/grey</item>
+    </style>
+
+    <!--TextInput Layout them-->
+    <style name="TextInputLayoutThem" parent="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColorHighlight">@color/transparent</item>
+        <item name="boxBackgroundMode">filled</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/_10sdp</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/_10sdp</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/_10sdp</item>
+        <item name="boxCornerRadiusTopStart">@dimen/_10sdp</item>
+        <item name="boxBackgroundColor">@color/transparent</item>
+        <item name="colorControlNormal">@color/grey</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="hintTextColor">@color/grey</item>
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="boxStrokeColor">@color/grey</item>
+        <item name="boxStrokeErrorColor">@color/red</item>
+    </style>
+
+    <style name="ErrorText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="HintText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+
+    <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:textColor">#FF4081</item>
+        // you can change the color of the yearPiker dialog
+        <item name="android:textColorPrimary">#FF4081</item>
+        // you can change the color of the yearPiker dialog
+    </style>
+
+    <style name="CustomTextAppearanceTab" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:fontFamily">@font/pangram_regular</item>
+        <item name="android:divider">@android:color/transparent</item>
+
+    </style>
+
+    <style name="TabLayout_Theme" parent="@style/AppTheme">
+        <item name="android:singleLine">true</item>
+    </style>
+
+
+    <style name="TextView.RadleyRegular">
+        <item name="android:fontFamily">@font/radley_regular</item>
+    </style>
+
+    <style name="TextView.RadleyRegular.ssp_18">
+        <item name="android:textSize">@dimen/_18ssp</item>
+    </style>
+
+    <style name="TextView.RadleyRegular.ssp_18.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+</resources>

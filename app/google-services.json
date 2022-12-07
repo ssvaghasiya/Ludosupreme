@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "174990633154",
+    "project_id": "voicem-edb53",
+    "storage_bucket": "voicem-edb53.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174990633154:android:b253c0be5b79e06ed1335b",
+        "android_client_info": {
+          "package_name": "com.voicem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174990633154-0abcvfib3usqaafdo1cpmg2ieq7emqp3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.voicem",
+            "certificate_hash": "b0fc49c29f1ba875d717b0c206217a827b71e1db"
+          }
+        },
+        {
+          "client_id": "174990633154-eotdjb8hajjvpmsfndp854c4au9ooidj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.voicem",
+            "certificate_hash": "5653cd46e7912e0a2d8e1abfa45773c32b748e57"
+          }
+        },
+        {
+          "client_id": "174990633154-bdn14n6430b90k5r63jsfcv49atl0u0q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8fBixZcklSHhr9DZfhR6JlrPdJlDRY3Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174990633154-bdn14n6430b90k5r63jsfcv49atl0u0q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

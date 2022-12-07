@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Voicem</string>
+    <string name="connect_to_internet">connect to internet</string>
+    <string name="message_image_upload_failed">message image upload failed %s</string>
+    <string name="conn_timeout">connection timeout</string>
+    <string name="something_went_wrong">something went wrong</string>
+    <string name="label_camera">Camera</string>
+    <string name="label_gallery">Gallery</string>
+    <string name="label_video">Video</string>
+
+</resources>

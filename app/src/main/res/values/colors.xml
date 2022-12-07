@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="grey">#898E95</color>
+    <color name="greyTransparent">#4D898E95</color>
+    <color name="yellowDark">#CA9C56</color>
+    <color name="yellowExtraDark">#EC9817</color>
+    <color name="yellowLight">#FEF8EF</color>
+    <color name="red">#EB1F1F</color>
+    <color name="edit_text_border_color">#898E9566</color>
+    <color name="greyExtraLight">#F7F7F7</color>
+    <color name="greyLight">#9FA1AD</color>
+    <color name="greyBG">#EDEEEF</color>
+    <color name="greyLightDark">#DADCDE</color>
+    <color name="green">#38DF54</color>
+    <color name="greenLight">#BCF4C5</color>
+    <color name="greenExtraLight">#E1F7F6</color>
+    <color name="greenDark">#0DA773</color>
+    <color name="redLight">#FDEAEE</color>
+    <color name="blackTransparent">#99000000</color>
+    <color name="backgroundColor">#1C211D</color>
+    <color name="blue">#005CB9</color>
+    <color name="editTextBGColor">#252C2C</color>
+    <color name="profileBGColor">#383E3D</color>
+
+    <color name="themeColor1">#946c82</color>
+    <color name="themeColor2">#758b8b</color>
+    <color name="light_blue">#22A3DA</color>
+</resources>
