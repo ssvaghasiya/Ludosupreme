@@ -2,6 +2,7 @@ package com.ludosupreme.ui.home.fragment
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.SnapHelper
 import com.ludosupreme.R
@@ -10,6 +11,7 @@ import com.ludosupreme.di.component.FragmentComponent
 import com.ludosupreme.ui.base.BaseFragment
 import com.ludosupreme.ui.base.adapters.OnRecycleItemClickWithPosition
 import com.ludosupreme.ui.home.adapter.HomeAdsAdapter
+import com.ludosupreme.utils.CirclePagerIndicatorDecoration
 
 
 class SecondFragment : BaseFragment(), View.OnClickListener {
@@ -68,8 +70,16 @@ class SecondFragment : BaseFragment(), View.OnClickListener {
         val snapHelper: SnapHelper = PagerSnapHelper()
         snapHelper.attachToRecyclerView(recyclerViewLudo)
 
-//        dotsIndicator.attachToRecyclerView(recyclerViewLudo)
+        val circlePagerIndicatorDecoration = CirclePagerIndicatorDecoration()
+        circlePagerIndicatorDecoration.setDotColors(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.white
+            ), ContextCompat.getColor(requireContext(), R.color.colorAccent)
+        )
+        recyclerViewLudo.addItemDecoration(circlePagerIndicatorDecoration)
 
+        adsAdapter.items?.add("")
         adsAdapter.items?.add("")
         adsAdapter.items?.add("")
         adsAdapter.items?.add("")

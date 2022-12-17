@@ -15,7 +15,6 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
-import com.tapadoo.alerter.Alerter
 import com.ludosupreme.R
 import com.ludosupreme.exception.NoInternetException
 import com.ludosupreme.utils.CallbackListener
@@ -132,14 +131,3 @@ fun Activity.isInternetAvailable(context: Context, callbackListener: CallbackLis
     }
 }
 
-fun Activity.showErrorMsg(message: String?) {
-    message?.let {
-        Alerter.create(this)
-            .setTitle(it)
-            .setBackgroundColorRes(R.color.green)
-            .setTextTypeface(ResourcesCompat.getFont(this, R.font.poppins_bold)!!)
-            .setDuration(2000)
-            .hideIcon()
-            .show()
-    }
-}

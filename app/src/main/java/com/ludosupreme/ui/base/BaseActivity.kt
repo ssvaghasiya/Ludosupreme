@@ -18,7 +18,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.appbar.AppBarLayout
 import com.ludosupreme.exception.ApplicationException
 import com.theartofdev.edmodo.cropper.CropImage
@@ -36,7 +35,6 @@ import com.ludosupreme.extenstions.*
 import com.ludosupreme.ui.authentication.activity.AuthenticationActivity
 import com.ludosupreme.ui.manager.*
 import com.ludosupreme.utils.Debug
-import com.ludosupreme.utils.customLoader.CustomLoaderDialog
 import kotlinx.android.synthetic.main.main_content.*
 import java.net.ConnectException
 import java.net.SocketTimeoutException
@@ -380,18 +378,25 @@ abstract class BaseActivity : AppCompatActivity(), HasComponent<ActivityComponen
     public fun onError(throwable: Throwable) {
         Log.e(javaClass.simpleName, "Error From Base framework ", throwable)
         try {
-            if (throwable is ServerException) {
-                showErrorMsg(throwable.message ?: "")
-            } else if (throwable is ConnectException) {
-                showToast(getString(R.string.connect_to_internet))
-            } else if (throwable is ApplicationException) {
-                showToast(throwable.message)
-            } else if (throwable is AuthenticationException) {
-                onLogoutOpenAuthentication()
-            } else if (throwable is SocketTimeoutException) {
-                showToast(getString(R.string.conn_timeout))
-            } else {
-                showToast(getString(R.string.something_went_wrong))
+            when (throwable) {
+                is ServerException -> {
+                    showToast(throwable.message ?: "")
+                }
+                is ConnectException -> {
+                    showToast(getString(R.string.connect_to_internet))
+                }
+                is ApplicationException -> {
+                    showToast(throwable.message)
+                }
+                is AuthenticationException -> {
+                    onLogoutOpenAuthentication()
+                }
+                is SocketTimeoutException -> {
+                    showToast(getString(R.string.conn_timeout))
+                }
+                else -> {
+                    showToast(getString(R.string.something_went_wrong))
+                }
             }
         } catch (e: Exception) {
             e.printStackTrace()

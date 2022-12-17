@@ -32,7 +32,6 @@ import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.button.MaterialButton
-import com.tapadoo.alerter.Alerter
 import com.ludosupreme.R
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -154,17 +153,6 @@ fun Context.call(phone: String) {
     }
 }
 
-fun Fragment.showErrorMessage(message: String?) {
-    message?.let {
-        Alerter.create(requireActivity())
-            .setTitle(it)
-            .setBackgroundColorRes(R.color.green)
-            .setTextTypeface(ResourcesCompat.getFont(requireContext(), R.font.poppins_bold)!!)
-            .setDuration(2000)
-            .hideIcon()
-            .show()
-    }
-}
 
 /*fun Fragment.getCountryCode(): Country? {
     val listCountry = Country.readJsonOfCountries(requireActivity())

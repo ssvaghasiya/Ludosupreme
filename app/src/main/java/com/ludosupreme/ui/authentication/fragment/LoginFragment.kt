@@ -9,9 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.google.android.gms.tasks.Task
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.ludosupreme.exception.ApplicationException
@@ -23,7 +20,6 @@ import com.ludosupreme.databinding.AuthFragmentLoginBinding
 import com.ludosupreme.di.component.FragmentComponent
 import com.ludosupreme.extenstions.getTxt
 import com.ludosupreme.extenstions.hideKeyboard
-import com.ludosupreme.extenstions.showErrorMessage
 import com.ludosupreme.ui.authentication.activity.AuthenticationActivity
 import com.ludosupreme.ui.authentication.viewmodel.AuthenticationViewModel
 import com.ludosupreme.ui.base.BaseFragment
@@ -96,7 +92,7 @@ class LoginFragment : BaseFragment(), View.OnClickListener {
         try {
 
         } catch (e: ApplicationException) {
-            showErrorMessage(e.message)
+            showMessage(e.message)
             return false
         }
         return true

@@ -64,17 +64,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- <androidx.appcompat.widget.AppCompatButton
-             android:id="@+id/buttonPlayNow"
-             style="@style/Button.Medium.ssp_16"
-             android:layout_width="@dimen/_100sdp"
-             android:layout_height="@dimen/_37sdp"
-             android:background="@drawable/bg_button"
-             android:text="Play Now"
-             android:textAllCaps="false"
-             app:layout_constraintBottom_toBottomOf="parent"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintTop_toTopOf="parent" />-->
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -82,12 +72,15 @@
         android:layout_height="@dimen/_64sdp"
         android:layout_marginHorizontal="@dimen/_12sdp"
         android:layout_marginTop="@dimen/_13sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:background="@drawable/ic_boxx"
         android:paddingHorizontal="@dimen/_12sdp"
         android:paddingVertical="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textViewLabelGuarantee"
