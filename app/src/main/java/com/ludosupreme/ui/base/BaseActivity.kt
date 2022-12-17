@@ -20,8 +20,6 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.appbar.AppBarLayout
-import com.google.firebase.FirebaseApp
-import com.google.firebase.messaging.FirebaseMessaging
 import com.ludosupreme.exception.ApplicationException
 import com.theartofdev.edmodo.cropper.CropImage
 import com.ludosupreme.exception.AuthenticationException
@@ -102,10 +100,7 @@ abstract class BaseActivity : AppCompatActivity(), HasComponent<ActivityComponen
         progressDialog!!.setCanceledOnTouchOutside(false)
 
         App.session = session
-        FirebaseApp.initializeApp(this)
-        createFirebaseToken()
         super.onCreate(savedInstanceState)
-
     }
 
 
@@ -360,27 +355,6 @@ abstract class BaseActivity : AppCompatActivity(), HasComponent<ActivityComponen
                session.deviceId = it
            }
        }*/
-
-    private fun createFirebaseToken() {
-        try {
-            FirebaseMessaging.getInstance().token
-                .addOnCompleteListener(OnCompleteListener { task ->
-                    if (!task.isSuccessful) {
-                        return@OnCompleteListener
-                    }
-                    //                          Get new Instance ID token
-                    val token = task.result
-                    try {
-                        session.deviceId = token
-                    } catch (e: Exception) {
-                        e.printStackTrace()
-                    }
-                    Debug.e("fcm_token", token)
-                })
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-    }
 
 
     override fun <T : BaseFragment> load(tClass: Class<T>): FragmentActionPerformer<T> {

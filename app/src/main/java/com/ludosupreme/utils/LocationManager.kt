@@ -75,7 +75,7 @@ class LocationManager @Inject constructor(val context: Context) {
                 val location = locationResult?.lastLocation
                 lastLocation = location
                 locationUpdateLiveData.postValue(location?.latitude.let { LatLng(it!!, location?.longitude!!) })
-                Log.i("Hlink", "Location: [ %f , %f ]${location?.latitude}")
+                Log.i("LocationManager", "Location: [ %f , %f ]${location?.latitude}")
                 callback?.invoke(location, null)
             }
         }
@@ -94,7 +94,7 @@ class LocationManager @Inject constructor(val context: Context) {
                         val location = it.result
                         lastLocation = location
                         locationUpdateLiveData.postValue(location?.latitude.let { LatLng(it!!, location?.longitude!!) })
-                        Log.i("Hlink", "Location: [ %f , %f ]${location?.latitude}")
+                        Log.i("LocationManager", "Location: [ %f , %f ]${location?.latitude}")
                         callback.invoke(location, null)
                     } else {
                         callback.invoke(null, LocationException(it.exception?.message, Status.OTHER))
@@ -120,7 +120,7 @@ class LocationManager @Inject constructor(val context: Context) {
                         // Begin by checking if the device has the necessary location settings.
                         settingsClient.checkLocationSettings(locationSettingsRequest)
                                 .addOnSuccessListener {
-                                    Log.i("Hlink", "All location settings are satisfied.")
+                                    Log.i("LocationManager", "All location settings are satisfied.")
                                     LocationServices.getFusedLocationProviderClient(context)
                                             .requestLocationUpdates(locationRequest, object : LocationCallback() {
                                                 override fun onLocationResult(locationResult: LocationResult?) {
@@ -128,7 +128,7 @@ class LocationManager @Inject constructor(val context: Context) {
                                                     val location = locationResult?.lastLocation
                                                     lastLocation = location
                                                     locationUpdateLiveData.postValue(location?.latitude.let { LatLng(it!!, location?.longitude!!) })
-                                                    Log.i("Hlink", "Location: [ %f , %f ]${location?.latitude}")
+                                                    Log.i("LocationManager", "Location: [ %f , %f ]${location?.latitude}")
                                                     callback.invoke(location, null)
                                                     LocationServices.getFusedLocationProviderClient(context)
                                                             .removeLocationUpdates(this)
@@ -147,7 +147,7 @@ class LocationManager @Inject constructor(val context: Context) {
                                     val statusCode = (it as ApiException).statusCode
                                     when (statusCode) {
                                         LocationSettingsStatusCodes.RESOLUTION_REQUIRED -> {
-                                            Log.i("Hlink", "Location settings are not satisfied. Attempting to upgrade location settings")
+                                            Log.i("LocationManager", "Location settings are not satisfied. Attempting to upgrade location settings")
                                             try {
                                                 // Cast to a resolvable exception.
                                                 val resolvable = it as ResolvableApiException
@@ -156,7 +156,7 @@ class LocationManager @Inject constructor(val context: Context) {
                                                 resolvable.startResolutionForResult(activity, REQUEST_CHECK_SETTINGS)
                                             } catch (e: IntentSender.SendIntentException) {
                                                 // Ignore the error.
-                                                Log.i("Hlink", "PendingIntent unable to execute request.")
+                                                Log.i("LocationManager", "PendingIntent unable to execute request.")
                                             } catch (e: ClassCastException) {
                                                 // Ignore, should be an impossible error.
                                             }
@@ -164,7 +164,7 @@ class LocationManager @Inject constructor(val context: Context) {
                                         LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE -> {
                                             val errorMessage =
                                                     "Location settings are inadequate, and cannot be fixed here. Fix in Settings."
-                                            Log.i("Hlink", errorMessage)
+                                            Log.i("LocationManager", errorMessage)
                                             Toast.makeText(context, errorMessage, Toast.LENGTH_LONG).show()
                                         }
                                         else -> {
@@ -196,7 +196,7 @@ class LocationManager @Inject constructor(val context: Context) {
                         // Begin by checking if the device has the necessary location settings.
                         settingsClient.checkLocationSettings(locationSettingsRequest)
                                 .addOnSuccessListener {
-                                    Log.i("Hlink", "All location settings are satisfied.")
+                                    Log.i("LocationManager", "All location settings are satisfied.")
                                     fusedLocationProviderClient.requestLocationUpdates(
                                             locationRequest,
                                             locationCallback,
@@ -207,7 +207,7 @@ class LocationManager @Inject constructor(val context: Context) {
                                     val statusCode = (it as ApiException).statusCode
                                     when (statusCode) {
                                         LocationSettingsStatusCodes.RESOLUTION_REQUIRED -> {
-                                            Log.i("Hlink", "Location settings are not satisfied. Attempting to upgrade location settings")
+                                            Log.i("LocationManager", "Location settings are not satisfied. Attempting to upgrade location settings")
                                             try {
                                                 // Cast to a resolvable exception.
                                                 val resolvable = it as ResolvableApiException
@@ -216,7 +216,7 @@ class LocationManager @Inject constructor(val context: Context) {
                                                 resolvable.startResolutionForResult(activity, REQUEST_CHECK_SETTINGS)
                                             } catch (e: IntentSender.SendIntentException) {
                                                 // Ignore the error.
-                                                Log.i("Hlink", "PendingIntent unable to execute request.")
+                                                Log.i("LocationManager", "PendingIntent unable to execute request.")
                                             } catch (e: ClassCastException) {
                                                 // Ignore, should be an impossible error.
                                             }
@@ -224,7 +224,7 @@ class LocationManager @Inject constructor(val context: Context) {
                                         LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE -> {
                                             val errorMessage =
                                                     "Location settings are inadequate, and cannot be fixed here. Fix in Settings."
-                                            Log.i("Hlink", errorMessage)
+                                            Log.i("LocationManager", errorMessage)
                                             Toast.makeText(context, errorMessage, Toast.LENGTH_LONG).show()
                                         }
                                         else -> {
@@ -246,11 +246,11 @@ class LocationManager @Inject constructor(val context: Context) {
      * Stop fetching location updates.
      */
     fun stopFetchLocationUpdates() {
-        Log.i("Hlink", "STOP LOCATION UPDATES")
+        Log.i("LocationManager", "STOP LOCATION UPDATES")
         fusedLocationProviderClient
                 .removeLocationUpdates(locationCallback)
                 .addOnCompleteListener {
-                    Log.i("Hlink", "STOP LOCATION UPDATES - COMPLETE")
+                    Log.i("LocationManager", "STOP LOCATION UPDATES - COMPLETE")
                 }
     }
 

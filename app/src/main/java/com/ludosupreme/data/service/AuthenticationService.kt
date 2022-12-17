@@ -5,8 +5,6 @@ import com.ludosupreme.data.pojo.ApiRequestData
 import com.ludosupreme.data.pojo.CredentialData
 import com.ludosupreme.data.pojo.ResponseBody
 import com.ludosupreme.data.pojo.User
-import com.ludosupreme.ui.home.model.NotificationData
-import com.ludosupreme.ui.home.model.PosterData
 import io.reactivex.Single
 import retrofit2.http.Body
 import retrofit2.http.Field

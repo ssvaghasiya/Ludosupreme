@@ -78,13 +78,15 @@ class SecondFragment : BaseFragment(), View.OnClickListener {
 
 
     private fun setOnClickListener() = with(binding) {
-
+        imageViewWithdraw.setOnClickListener(this@SecondFragment)
     }
 
 
     override fun onClick(p0: View?) {
         when (p0?.id) {
-
+            R.id.imageViewWithdraw -> {
+                navigator.load(FourthFragment::class.java).replace(true)
+            }
         }
     }
 

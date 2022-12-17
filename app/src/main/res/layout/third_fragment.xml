@@ -34,10 +34,9 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:paddingVertical="@dimen/_10sdp"
-        android:paddingStart="@dimen/_12sdp"
         android:text="Recommended Tournaments"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@+id/imageViewBack"
+        app:layout_constraintStart_toEndOf="@+id/imageViewBack"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline

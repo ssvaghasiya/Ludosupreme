@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Voicem</string>
+    <string name="app_name">Ludo Supreme</string>
     <string name="connect_to_internet">connect to internet</string>
     <string name="message_image_upload_failed">message image upload failed %s</string>
     <string name="conn_timeout">connection timeout</string>
@@ -11,5 +11,17 @@
     <string name="label_input_bank_account_number_again"><font size="10">Input Account Number Again</font></string>
     <string name="label_input_ifsc_code_number"><font size="10">Input IFSC Code Number</font></string>
     <string name="label_bank_name"><font size="10">Input Bank Name</font></string>
+    <string name="validation_real_name">Please enter real name</string>
+    <string name="validation_bank_name">Please enter bank name</string>
+    <string name="validation_account_number">Please enter account number</string>
+    <string name="validation_confirm_account_number">Please enter confirm account number</string>
+    <string name="validation_account_number_match">Password account number and confirm account number not matched</string>
+    <string name="validation_account_number_contains_minimum_15_characters">Please enter minimum 15 characters for account number</string>
+    <string name="validation_account_name">Please enter account name</string>
+    <string name="validation_sort_code">Please enter IFSC code</string>
+    <string name="validation_enter_email">Please enter email</string>
+    <string name="validation_invalid_email">Please enter valid email</string>
+    <string name="validation_enter_phone">Please enter phone number</string>
+    <string name="validation_enter_valid_number">Please enter valid phone number</string>
 
 </resources>

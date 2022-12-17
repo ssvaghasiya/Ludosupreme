@@ -25,10 +25,10 @@ android {
             keyPassword 'android'
         }
         release {
-            storeFile file('D:\\hlink\\voicem\\release_details\\keystore\\voicem_keystore.jks')
-            storePassword 'hyperlink'
-            keyPassword 'hyperlink'
-            keyAlias 'alice_voicem'
+            storeFile file('D:\\hlink\\ludo\\release_details\\keystore\\ludo_keystore.jks')
+            storePassword 'ludo'
+            keyPassword 'ludo'
+            keyAlias 'ludo'
         }
     }
 
@@ -51,7 +51,7 @@ android {
 
     android.applicationVariants.all { variant ->
         variant.outputs.all {
-            outputFileName = "voicem-${variant.name}-${variant.versionName}.apk"
+            outputFileName = "ludo-${variant.name}-${variant.versionName}.apk"
         }
     }
 
@@ -76,7 +76,6 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:2.1.4"
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.google.android.gms:play-services-maps:18.0.0'
     testImplementation 'junit:junit:4.13.2'
 
     // if you use the support libraries
@@ -128,9 +127,6 @@ dependencies {
     //Alert
     implementation 'com.tapadoo.android:alerter:4.0.2'
 
-    //indicator
-    implementation 'com.github.vivchar:ViewPagerIndicator:v1.1.3'
-
     //facebook
     implementation 'com.facebook.android:facebook-login:12.2.0'
 
@@ -144,9 +140,6 @@ dependencies {
 
     //EventBus
     implementation("org.greenrobot:eventbus:3.3.1")
-
-    //firebase-messaging
-    implementation 'com.google.firebase:firebase-messaging:23.0.0'
 
     //multidex
     def multidex_version = "2.0.1"

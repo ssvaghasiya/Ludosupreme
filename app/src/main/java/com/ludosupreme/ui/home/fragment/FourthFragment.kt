@@ -6,6 +6,7 @@ import com.ludosupreme.R
 import com.ludosupreme.databinding.FourthFragmentBinding
 import com.ludosupreme.databinding.ThirdFragmentBinding
 import com.ludosupreme.di.component.FragmentComponent
+import com.ludosupreme.exception.ApplicationException
 import com.ludosupreme.ui.base.BaseFragment
 import com.ludosupreme.ui.base.adapters.OnRecycleItemClickWithPosition
 import com.ludosupreme.ui.home.adapter.HomeTournamentsAdapter
@@ -52,6 +53,7 @@ class FourthFragment : BaseFragment(), View.OnClickListener {
 
     private fun setOnClickListener() = with(binding) {
         imageViewBack.setOnClickListener(this@FourthFragment)
+        buttonSubmit.setOnClickListener(this@FourthFragment)
     }
 
 
@@ -60,7 +62,58 @@ class FourthFragment : BaseFragment(), View.OnClickListener {
             R.id.imageViewBack -> {
                 navigator.goBack()
             }
+            R.id.buttonSubmit -> {
+                if (isValidate()) {
+                    showToast("Withdraw successfully")
+                    navigator.goBack()
+                }
+            }
         }
+    }
+
+    private fun isValidate(): Boolean {
+        try {
+            validator.submit(binding.editTextRealName).checkEmpty()
+                .errorMessage(getString(R.string.validation_real_name))
+                .check()
+
+            validator.submit(binding.editTextAccountNumber).checkEmpty()
+                .errorMessage(getString(R.string.validation_account_number)).checkMinDigits(15)
+                .errorMessage(getString(R.string.validation_account_number_contains_minimum_15_characters))
+                .check()
+
+            validator.submit(binding.editTextConfirmAccountNumber).checkEmpty()
+                .errorMessage(getString(R.string.validation_confirm_account_number))
+                .check()
+
+
+            validator.submit(binding.editTextAccountNumber)
+                .matchString(binding.editTextConfirmAccountNumber.text?.trim().toString())
+                .errorMessage(getString(R.string.validation_account_number_match)).check()
+
+            validator.submit(binding.editTextIFSCCode).checkEmpty()
+                .errorMessage(getString(R.string.validation_sort_code))
+                .check()
+
+            validator.submit(binding.editTextEmail).checkEmpty()
+                .errorMessage(getString(R.string.validation_enter_email))
+                .checkValidEmail()
+                .errorMessage(getString(R.string.validation_invalid_email))
+                .check()
+
+            validator.submit(binding.editTextBank).checkEmpty()
+                .errorMessage(getString(R.string.validation_bank_name))
+                .check()
+
+            validator.submit(binding.editTextMobile).checkEmpty()
+                .errorMessage(getString(R.string.validation_enter_phone)).checkMinDigits(8)
+                .errorMessage(getString(R.string.validation_enter_valid_number)).check()
+
+        } catch (e: ApplicationException) {
+            showToast(e.message)
+            return false
+        }
+        return true
     }
 
 }

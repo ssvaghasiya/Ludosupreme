@@ -10,9 +10,4 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(private val userRepository: UserRepository) :
     BaseViewModel() {
 
-    val getNotificationLiveData = APILiveData<NotificationData>()
-    val bannerListLiveData = APILiveData<List<PosterData>>()
-
-
-
 }

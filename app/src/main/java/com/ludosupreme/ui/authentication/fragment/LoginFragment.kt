@@ -73,23 +73,12 @@ class LoginFragment : BaseFragment(), View.OnClickListener {
     }
 
     private fun initView() {
-        val shader: Shader = LinearGradient(
-            0f, 0f, 0f, binding.textViewLabelMsg.lineHeight.toFloat(),
-            ContextCompat.getColor(requireContext(), R.color.green),
-            ContextCompat.getColor(requireContext(), R.color.light_blue), Shader.TileMode.CLAMP
-        )
-        binding.textViewLabelMsg.paint.shader = shader
+
     }
 
 
     private fun setOnClickListener() {
-        binding.apply {
-            textViewLabelForgot.setOnClickListener(this@LoginFragment)
-            buttonLogin.setOnClickListener(this@LoginFragment)
-            imageViewGoogle.setOnClickListener(this@LoginFragment)
-            imageViewFacebook.setOnClickListener(this@LoginFragment)
-            textViewLabelCreateAccount.setOnClickListener(this@LoginFragment)
-        }
+
     }
 
 
@@ -99,19 +88,7 @@ class LoginFragment : BaseFragment(), View.OnClickListener {
 
     override fun onClick(p0: View?) {
         when (p0?.id) {
-            R.id.textViewLabelForgot -> {
-            }
-            R.id.buttonLogin -> {
-                if (isValidate()) {
-                    callSignin(prepareSignInData())
-                }
-            }
-            R.id.imageViewGoogle -> {
-            }
-            R.id.imageViewFacebook -> {
-            }
-            R.id.textViewLabelCreateAccount -> {
-            }
+
         }
     }
 
@@ -124,25 +101,5 @@ class LoginFragment : BaseFragment(), View.OnClickListener {
         }
         return true
     }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-
-        super.onActivityResult(requestCode, resultCode, data)
-    }
-
-    private fun prepareSignInData(): ApiRequestData {
-        return getDeviceInfo(requireActivity(), session).apply {
-            email = binding.editTextEmail.getTxt()
-            signup_type = Constant.SignUpType.SIGNUP_TYPE_NORMAL
-            password = binding.editTextPassword.getTxt()
-        }
-    }
-
-    fun callSignin(data: ApiRequestData) {
-        hideKeyboard()
-        showLoader(true)
-        authenticationViewModel.signin(data)
-    }
-
 
 }

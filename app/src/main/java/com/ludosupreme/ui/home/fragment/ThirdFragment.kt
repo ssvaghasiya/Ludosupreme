@@ -8,6 +8,7 @@ import com.ludosupreme.di.component.FragmentComponent
 import com.ludosupreme.ui.base.BaseFragment
 import com.ludosupreme.ui.base.adapters.OnRecycleItemClickWithPosition
 import com.ludosupreme.ui.home.adapter.HomeTournamentsAdapter
+import com.ludosupreme.ui.home.model.TournamentsData
 
 
 class ThirdFragment : BaseFragment(), View.OnClickListener {
@@ -51,17 +52,25 @@ class ThirdFragment : BaseFragment(), View.OnClickListener {
     private fun initView() = with(binding) {
         homeTournamentsAdapter =
             HomeTournamentsAdapter(
-                object : OnRecycleItemClickWithPosition<String> {
-                    override fun onClick(t: String?, view: View, position: Int) {
+                object : OnRecycleItemClickWithPosition<TournamentsData> {
+                    override fun onClick(t: TournamentsData?, view: View, position: Int) {
 
                     }
                 })
         recyclerViewTournaments.adapter = homeTournamentsAdapter
         homeTournamentsAdapter.items = ArrayList()
 
-        homeTournamentsAdapter.items?.add("")
-        homeTournamentsAdapter.items?.add("")
-        homeTournamentsAdapter.items?.add("")
+        homeTournamentsAdapter.items?.add(TournamentsData(120000))
+        homeTournamentsAdapter.items?.add(TournamentsData(120000))
+        homeTournamentsAdapter.items?.add(TournamentsData(120000))
+
+        homeTournamentsAdapter.items?.add(TournamentsData(120000))
+        homeTournamentsAdapter.items?.add(TournamentsData(120000))
+        homeTournamentsAdapter.items?.add(TournamentsData(120000))
+
+        homeTournamentsAdapter.items?.add(TournamentsData(120000))
+        homeTournamentsAdapter.items?.add(TournamentsData(120000))
+        homeTournamentsAdapter.items?.add(TournamentsData(120000))
         homeTournamentsAdapter.notifyDataSetChanged()
     }
 
