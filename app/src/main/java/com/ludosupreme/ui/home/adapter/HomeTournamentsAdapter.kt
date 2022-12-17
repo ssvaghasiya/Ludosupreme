@@ -4,28 +4,27 @@ import android.view.View
 import android.view.ViewGroup
 import com.ludosupreme.R
 import com.ludosupreme.databinding.SecondItemBinding
+import com.ludosupreme.databinding.ThirdItemBinding
 import com.ludosupreme.ui.base.adapters.AdvanceRecycleViewAdapter
 import com.ludosupreme.ui.base.adapters.BaseHolder
 import com.ludosupreme.ui.base.adapters.OnRecycleItemClickWithPosition
 
 
-class HomeAdsAdapter(var onRecycleItemClickWithPosition: OnRecycleItemClickWithPosition<String>) :
-    AdvanceRecycleViewAdapter<HomeAdsAdapter.ViewHolder, String>() {
+class HomeTournamentsAdapter(var onRecycleItemClickWithPosition: OnRecycleItemClickWithPosition<String>) :
+    AdvanceRecycleViewAdapter<HomeTournamentsAdapter.ViewHolder, String>() {
 
     inner class ViewHolder(view: View) : BaseHolder<String>(view) {
-        private val viewBinding = SecondItemBinding.bind(view)
+        private val viewBinding = ThirdItemBinding.bind(view)
         fun bindData(item: String) = with(viewBinding) {
             item.apply {
-                buttonPlayNow.setOnClickListener {
-                    onRecycleItemClickWithPosition.onClick(item, it, adapterPosition)
-                }
+
             }
         }
     }
 
 
     override fun createDataHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(makeView(parent, R.layout.second_item))
+        return ViewHolder(makeView(parent, R.layout.third_item))
     }
 
     override fun onBindDataHolder(

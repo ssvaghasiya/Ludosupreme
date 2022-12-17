@@ -2,28 +2,26 @@ package com.ludosupreme.ui.home.fragment
 
 import android.os.Bundle
 import android.view.View
-import androidx.recyclerview.widget.PagerSnapHelper
-import androidx.recyclerview.widget.SnapHelper
 import com.ludosupreme.R
-import com.ludosupreme.databinding.SecondFragmentBinding
+import com.ludosupreme.databinding.ThirdFragmentBinding
 import com.ludosupreme.di.component.FragmentComponent
 import com.ludosupreme.ui.base.BaseFragment
 import com.ludosupreme.ui.base.adapters.OnRecycleItemClickWithPosition
-import com.ludosupreme.ui.home.adapter.HomeAdsAdapter
+import com.ludosupreme.ui.home.adapter.HomeTournamentsAdapter
 
 
-class SecondFragment : BaseFragment(), View.OnClickListener {
+class ThirdFragment : BaseFragment(), View.OnClickListener {
 
-    private var _binding: SecondFragmentBinding? = null
-    private val binding: SecondFragmentBinding
+    private var _binding: ThirdFragmentBinding? = null
+    private val binding: ThirdFragmentBinding
         get() = _binding!!
 
-    lateinit var adsAdapter: HomeAdsAdapter
+    lateinit var homeTournamentsAdapter: HomeTournamentsAdapter
 
-    override fun createLayout(): Int = R.layout.second_fragment
+    override fun createLayout(): Int = R.layout.third_fragment
 
     override fun bindViewWithViewBinding(view: View) {
-        _binding = SecondFragmentBinding.bind(view)
+        _binding = ThirdFragmentBinding.bind(view)
     }
 
     override fun onDestroyView() {
@@ -51,29 +49,20 @@ class SecondFragment : BaseFragment(), View.OnClickListener {
 
 
     private fun initView() = with(binding) {
-        adsAdapter =
-            HomeAdsAdapter(
+        homeTournamentsAdapter =
+            HomeTournamentsAdapter(
                 object : OnRecycleItemClickWithPosition<String> {
                     override fun onClick(t: String?, view: View, position: Int) {
-                        when (view.id) {
-                            R.id.buttonPlayNow -> {
-                                navigator.load(ThirdFragment::class.java).replace(true)
-                            }
-                        }
+
                     }
                 })
-        recyclerViewLudo.adapter = adsAdapter
-        adsAdapter.items = ArrayList()
+        recyclerViewTournaments.adapter = homeTournamentsAdapter
+        homeTournamentsAdapter.items = ArrayList()
 
-        val snapHelper: SnapHelper = PagerSnapHelper()
-        snapHelper.attachToRecyclerView(recyclerViewLudo)
-
-//        dotsIndicator.attachToRecyclerView(recyclerViewLudo)
-
-        adsAdapter.items?.add("")
-        adsAdapter.items?.add("")
-        adsAdapter.items?.add("")
-        adsAdapter.notifyDataSetChanged()
+        homeTournamentsAdapter.items?.add("")
+        homeTournamentsAdapter.items?.add("")
+        homeTournamentsAdapter.items?.add("")
+        homeTournamentsAdapter.notifyDataSetChanged()
     }
 
 
