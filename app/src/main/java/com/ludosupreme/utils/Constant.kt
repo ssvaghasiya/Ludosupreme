@@ -221,12 +221,9 @@ object Constant {
     }
 
     object PushTag {
-        const val VOICEM_USER_REQUEST = "voicem_user_request"
     }
 
     object PushTagKEYS {
-        const val PUSH_TAG_REQUEST = "voicem_user_request"
-        const val PUSH_TAG_RECORD = "voicem_user_record"
     }
 
     object FavouriteFlag {

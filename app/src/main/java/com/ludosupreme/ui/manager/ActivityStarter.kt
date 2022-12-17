@@ -13,9 +13,6 @@ import com.ludosupreme.ui.base.BaseFragment
 
 import javax.inject.Inject
 
-/**
- * Created by hlink21 on 11/5/16.
- */
 @PerActivity
 class ActivityStarter @Inject
 internal constructor(private val context: BaseActivity) {

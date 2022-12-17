@@ -9,11 +9,11 @@ import com.ludosupreme.databinding.IsolatedActivityBinding
 import com.ludosupreme.di.component.ActivityComponent
 import com.ludosupreme.extenstions.makeStatusBarDarkTransparent
 import com.ludosupreme.extenstions.setMarginTop
+import com.ludosupreme.extenstions.updateStatusBarColor
 import com.ludosupreme.ui.base.BaseActivity
 import com.ludosupreme.ui.base.BaseFragment
 import com.ludosupreme.ui.manager.ActivityStarter
 import com.ludosupreme.utils.Constant
-import com.ludosupreme.utils.Constant.PushTag.VOICEM_USER_REQUEST
 
 class IsolatedActivity : BaseActivity() {
     lateinit var binding: IsolatedActivityBinding
@@ -30,22 +30,14 @@ class IsolatedActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        makeStatusBarDarkTransparent()
+        updateStatusBarColor(R.color.colorDarkBlue)
         setMarginZero()
         if (supportActionBar != null)
             supportActionBar!!.setDisplayShowTitleEnabled(false)
-        var requestNotification = intent.getStringExtra(Constant.PushTagKEYS.PUSH_TAG_REQUEST)
         if (savedInstanceState == null) {
-            if (requestNotification.isNullOrEmpty()
-                    .not() && requestNotification == VOICEM_USER_REQUEST
-            ) {
-
-            } else {
-                val page =
-                    intent.getSerializableExtra(ActivityStarter.ACTIVITY_FIRST_PAGE) as Class<BaseFragment>
-                load(page).setBundle(intent.extras!!).replace(false)
-            }
-
+            val page =
+                intent.getSerializableExtra(ActivityStarter.ACTIVITY_FIRST_PAGE) as Class<BaseFragment>
+            load(page).setBundle(intent.extras!!).replace(false)
         }
 
     }

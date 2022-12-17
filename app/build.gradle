@@ -25,7 +25,7 @@ android {
             keyPassword 'android'
         }
         release {
-            storeFile file('D:\\hlink\\ludo\\release_details\\keystore\\ludo_keystore.jks')
+            storeFile file('D:\\ludo\\ludo\\release_details\\keystore\\ludo_keystore.jks')
             storePassword 'ludo'
             keyPassword 'ludo'
             keyAlias 'ludo'

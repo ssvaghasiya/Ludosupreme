@@ -32,7 +32,7 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Debug.e("Home==")
+        updateStatusBarColor(R.color.colorDarkBlue)
         initView()
         setOnClickListener()
         load(SecondFragment::class.java).add(false)
@@ -54,10 +54,6 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
         }
     }
 
-    override fun onBackPressed() {
-        finishAffinity()
-        finish()
-    }
 
     fun setMarginZero() {
         ViewCompat.setOnApplyWindowInsetsListener(binding.coordinatorLayout) { _, insets ->
