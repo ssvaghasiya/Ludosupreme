@@ -7,13 +7,13 @@
     android:background="@drawable/ic_bg">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageViewWithdraw"
+        android:id="@+id/imageViewBack"
         android:layout_width="@dimen/_24sdp"
         android:layout_height="@dimen/_24sdp"
         android:src="@drawable/ic_back"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewLudo"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewTitle"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-        app:layout_constraintTop_toTopOf="@+id/textViewLudo" />
+        app:layout_constraintTop_toTopOf="@+id/textViewTitle" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageViewLine"
@@ -25,18 +25,19 @@
         android:src="@drawable/ic_line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLudo" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textViewLudo"
+        android:id="@+id/textViewTitle"
         style="@style/TextView.Medium.ssp_16.white"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_10sdp"
+        android:gravity="center"
         android:paddingVertical="@dimen/_10sdp"
+        android:paddingStart="@dimen/_12sdp"
         android:text="Recommended Tournaments"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageViewWithdraw"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/imageViewBack"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline

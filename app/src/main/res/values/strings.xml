@@ -7,5 +7,9 @@
     <string name="label_camera">Camera</string>
     <string name="label_gallery">Gallery</string>
     <string name="label_video">Video</string>
+    <string name="label_input_bank_account_number"><font size="10">Input Bank Account Number</font></string>
+    <string name="label_input_bank_account_number_again"><font size="10">Input Account Number Again</font></string>
+    <string name="label_input_ifsc_code_number"><font size="10">Input IFSC Code Number</font></string>
+    <string name="label_bank_name"><font size="10">Input Bank Name</font></string>
 
 </resources>
