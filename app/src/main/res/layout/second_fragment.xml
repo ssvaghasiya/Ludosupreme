@@ -19,6 +19,7 @@
         android:id="@+id/imageViewLine"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_8sdp"
         android:layout_marginTop="@dimen/_6sdp"
         android:scaleType="fitXY"
         android:src="@drawable/ic_line"
@@ -54,17 +55,30 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewLudo"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:scrollbars="none"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constrainedHeight="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewLine"
         tools:itemCount="15"
         tools:listitem="@layout/second_item" />
+
+    <!--    <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator-->
+    <!--        android:id="@+id/dotsIndicator"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constrainedWidth="true"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/recyclerViewLudo"-->
+    <!--        app:spi_dotColor="@color/colorAccent"-->
+    <!--        app:spi_dotSelectedSize="@dimen/_12sdp"-->
+    <!--        app:spi_dotSize="@dimen/_12sdp"-->
+    <!--        app:spi_dotSpacing="@color/white" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

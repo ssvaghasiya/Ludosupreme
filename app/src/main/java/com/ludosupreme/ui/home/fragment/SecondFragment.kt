@@ -2,31 +2,23 @@ package com.ludosupreme.ui.home.fragment
 
 import android.os.Bundle
 import android.view.View
-import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.PagerSnapHelper
+import androidx.recyclerview.widget.SnapHelper
 import com.ludosupreme.R
 import com.ludosupreme.databinding.SecondFragmentBinding
 import com.ludosupreme.di.component.FragmentComponent
-import com.ludosupreme.ui.authentication.viewmodel.AuthenticationViewModel
 import com.ludosupreme.ui.base.BaseFragment
-import com.ludosupreme.ui.home.viewmodel.HomeViewModel
+import com.ludosupreme.ui.base.adapters.OnRecycleItemClickWithPosition
+import com.ludosupreme.ui.home.adapter.HomeAdsAdapter
 
 
 class SecondFragment : BaseFragment(), View.OnClickListener {
 
-
     private var _binding: SecondFragmentBinding? = null
-
     private val binding: SecondFragmentBinding
         get() = _binding!!
 
-    private val authenticationViewModel by lazy {
-        ViewModelProvider(this, viewModelFactory)[AuthenticationViewModel::class.java]
-    }
-
-
-    private val homeViewModel by lazy {
-        ViewModelProvider(this, viewModelFactory)[HomeViewModel::class.java]
-    }
+    lateinit var adsAdapter: HomeAdsAdapter
 
     override fun createLayout(): Int = R.layout.second_fragment
 
@@ -58,14 +50,31 @@ class SecondFragment : BaseFragment(), View.OnClickListener {
     }
 
 
-    private fun initView() {
+    private fun initView() = with(binding) {
+        adsAdapter =
+            HomeAdsAdapter(
+                object : OnRecycleItemClickWithPosition<String> {
+                    override fun onClick(t: String?, view: View, position: Int) {
 
+                    }
+                })
+        recyclerViewLudo.adapter = adsAdapter
+        adsAdapter.items = ArrayList()
+
+        val snapHelper: SnapHelper = PagerSnapHelper()
+        snapHelper.attachToRecyclerView(recyclerViewLudo)
+
+//        dotsIndicator.attachToRecyclerView(recyclerViewLudo)
+
+        adsAdapter.items?.add("")
+        adsAdapter.items?.add("")
+        adsAdapter.items?.add("")
+        adsAdapter.notifyDataSetChanged()
     }
 
 
-    private fun setOnClickListener() {
-        binding.apply {
-        }
+    private fun setOnClickListener() = with(binding) {
+
     }
 
 

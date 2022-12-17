@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginVertical="@dimen/_4sdp"
-    android:background="@drawable/ic_bg"
-    android:paddingBottom="@dimen/_16sdp">
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/_12sdp">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageViewLudo"
-        android:layout_width="@dimen/_200sdp"
-        android:layout_height="@dimen/_200sdp"
+        android:layout_width="@dimen/_210sdp"
+        android:layout_height="@dimen/_210sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:src="@drawable/ic_ludo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -18,10 +18,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_80sdp"
-        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_16sdp"
         android:background="@drawable/ic_box"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingVertical="@dimen/_10sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewLudo">
@@ -31,18 +35,73 @@
             style="@style/TextView.Medium.ssp_16.white"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8sdp"
             android:text="Ludo Supreme"
+            app:layout_constraintBottom_toTopOf="@+id/textViewLabelDesc"
+            app:layout_constraintEnd_toStartOf="@+id/buttonPlayNow"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textViewLabelDesc"
-            style="@style/TextView.Medium.ssp_12.white"
+            style="@style/TextView.Medium.ssp_10.white"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Classic Ludo i under 10 Mims"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:text="Classic Ludo in under 10 Mins"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textViewLudo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewLudo" />
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/buttonPlayNow"
+            android:layout_width="@dimen/_88sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/ic_play_now"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- <androidx.appcompat.widget.AppCompatButton
+             android:id="@+id/buttonPlayNow"
+             style="@style/Button.Medium.ssp_16"
+             android:layout_width="@dimen/_100sdp"
+             android:layout_height="@dimen/_37sdp"
+             android:background="@drawable/bg_button"
+             android:text="Play Now"
+             android:textAllCaps="false"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintTop_toTopOf="parent" />-->
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_64sdp"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_13sdp"
+        android:background="@drawable/ic_boxx"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewLabelGuarantee"
+            style="@style/TextView.Medium.ssp_10.white"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_92sdp"
+            android:text="We ensure fairplay &amp; guarantee 100% genuine gaming."
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.26" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

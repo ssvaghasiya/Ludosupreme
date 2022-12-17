@@ -666,6 +666,17 @@
         <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
 
+    <style name="Button.Bold.ssp_16">
+        <item name="android:textSize">@dimen/_16ssp</item>
+    </style>
+
+    <style name="Button.SemiBold">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <style name="Button.SemiBold.ssp_16">
+        <item name="android:textSize">@dimen/_16ssp</item>
+    </style>
 
     <style name="Button.Medium">
         <item name="android:fontFamily">@font/poppins_medium</item>
@@ -673,6 +684,10 @@
 
     <style name="Button.Medium.ssp_10">
         <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+    <style name="Button.Medium.ssp_16">
+        <item name="android:textSize">@dimen/_16ssp</item>
     </style>
 
     <style name="Button.Medium.ssp_10.white">
