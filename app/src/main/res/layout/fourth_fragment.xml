@@ -8,13 +8,25 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageViewBack"
-        android:layout_width="@dimen/_24sdp"
-        android:layout_height="@dimen/_24sdp"
+        android:layout_width="@dimen/_22sdp"
+        android:layout_height="@dimen/_22sdp"
         android:layout_marginStart="@dimen/_12sdp"
         android:src="@drawable/ic_back"
         app:layout_constraintBottom_toBottomOf="@+id/textViewTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textViewTitle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTitle"
+        style="@style/TextView.Medium.ssp_15.white"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_10sdp"
+        android:text="Withdraw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageViewBack"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageViewLine"
@@ -27,18 +39,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textViewTitle"
-        style="@style/TextView.Medium.ssp_16.white"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:paddingVertical="@dimen/_10sdp"
-        android:text="Withdraw"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageViewBack"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ScrollView

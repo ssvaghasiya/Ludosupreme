@@ -638,11 +638,27 @@
         <item name="android:textColor">@color/yellowDark</item>
     </style>
 
+    <style name="TextView.Medium.ssp_15">
+        <item name="android:textSize">@dimen/_15ssp</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_15.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
     <style name="TextView.Medium.ssp_16">
         <item name="android:textSize">@dimen/_16ssp</item>
     </style>
 
     <style name="TextView.Medium.ssp_16.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_17">
+        <item name="android:textSize">@dimen/_17ssp</item>
+    </style>
+
+    <style name="TextView.Medium.ssp_17.white">
         <item name="android:textColor">@color/white</item>
     </style>
 

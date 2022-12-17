@@ -11,7 +11,7 @@ import com.ludosupreme.ui.base.adapters.AdvanceRecycleViewAdapter
 import com.ludosupreme.ui.base.adapters.BaseHolder
 import com.ludosupreme.ui.base.adapters.OnRecycleItemClickWithPosition
 import com.ludosupreme.ui.home.model.TournamentsData
-import java.text.MessageFormat
+import java.util.*
 import java.util.concurrent.TimeUnit
 
 
@@ -45,9 +45,16 @@ class HomeTournamentsAdapter(var onRecycleItemClickWithPosition: OnRecycleItemCl
                     }
 
                     override fun onFinish() {
+                        timer?.cancel()
                         isFinished = true
+                        notifyItemChanged(adapterPosition)
                     }
                 }.start()
+
+
+                val i1: Int = Random().nextInt(500 - 1) + 28
+                textViewLabelCount.text = i1.toString()
+
                 if (isFinished) {
                     imageViewRupee.viewGone()
                     textViewPriceEntry.text = "Join"

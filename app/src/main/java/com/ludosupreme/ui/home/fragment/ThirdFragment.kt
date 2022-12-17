@@ -2,6 +2,7 @@ package com.ludosupreme.ui.home.fragment
 
 import android.os.Bundle
 import android.view.View
+import androidx.recyclerview.widget.SimpleItemAnimator
 import com.ludosupreme.R
 import com.ludosupreme.databinding.ThirdFragmentBinding
 import com.ludosupreme.di.component.FragmentComponent
@@ -59,6 +60,8 @@ class ThirdFragment : BaseFragment(), View.OnClickListener {
                 })
         recyclerViewTournaments.adapter = homeTournamentsAdapter
         homeTournamentsAdapter.items = ArrayList()
+        (recyclerViewTournaments?.itemAnimator as SimpleItemAnimator).supportsChangeAnimations =
+            false
 
         homeTournamentsAdapter.items?.add(TournamentsData(120000))
         homeTournamentsAdapter.items?.add(TournamentsData(120000))

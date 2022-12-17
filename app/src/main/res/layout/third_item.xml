@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/_170sdp"
-    android:layout_marginVertical="@dimen/_12sdp"
-    android:background="@drawable/ic_box">
+    android:layout_height="@dimen/_150sdp"
+    android:layout_marginVertical="@dimen/_10sdp"
+    android:background="@drawable/bg_round_white_light">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_36sdp"
+        android:layout_height="@dimen/_34sdp"
         android:background="@drawable/bg_round_white"
         android:paddingHorizontal="@dimen/_12sdp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +20,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textViewLabelPlayer"
-            style="@style/TextView.Medium.ssp_13"
+            style="@style/TextView.Medium.ssp_11"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="4 Player. 3 Winner"
@@ -31,8 +31,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageViewProfile"
-            android:layout_width="@dimen/_22sdp"
-            android:layout_height="@dimen/_22sdp"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
             android:layout_marginEnd="@dimen/_8sdp"
             android:src="@drawable/ic_profilee"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -41,7 +41,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textViewLabelCount"
-            style="@style/TextView.Medium.ssp_13"
+            style="@style/TextView.Medium.ssp_11"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="13"
@@ -52,8 +52,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutPrizePool"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_31sdp"
+        android:layout_width="@dimen/_96sdp"
+        android:layout_height="@dimen/_26sdp"
         android:layout_marginStart="@dimen/_12sdp"
         android:background="@drawable/ic_box_white"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,8 +61,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageViewRupee1"
-            android:layout_width="@dimen/_16sdp"
-            android:layout_height="@dimen/_16sdp"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
             android:src="@drawable/ic_ruppes"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textViewPrizePool"
@@ -74,7 +74,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textViewPrizePool"
-            style="@style/TextView.Medium.ssp_18"
+            style="@style/TextView.Medium.ssp_15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
@@ -91,10 +91,10 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewLabelPrizePool"
-        style="@style/TextView.Medium.ssp_12.white"
+        style="@style/TextView.Medium.ssp_11.white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_6sdp"
         android:gravity="center"
         android:text="Prize Pool"
         android:textAlignment="gravity"
@@ -108,9 +108,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_31sdp"
-        android:layout_marginTop="@dimen/_22sdp"
+        android:layout_width="@dimen/_96sdp"
+        android:layout_height="@dimen/_26sdp"
+        android:layout_marginTop="@dimen/_16sdp"
         android:layout_marginEnd="@dimen/_12sdp"
         android:background="@drawable/ic_box_yellow"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,8 +118,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageViewRupee"
-            android:layout_width="@dimen/_16sdp"
-            android:layout_height="@dimen/_16sdp"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
             android:src="@drawable/ic_ruppes"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textViewPriceEntry"
@@ -131,7 +131,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textViewPriceEntry"
-            style="@style/TextView.Medium.ssp_18"
+            style="@style/TextView.Medium.ssp_15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
@@ -148,10 +148,10 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewLabelEntry"
-        style="@style/TextView.Medium.ssp_12.white"
+        style="@style/TextView.Medium.ssp_11.white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_6sdp"
         android:gravity="center"
         android:text="Entry"
         android:textAlignment="gravity"
@@ -165,7 +165,7 @@
         style="@style/TextView.Medium.ssp_9.white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_2sdp"
         android:gravity="center"
         android:text="USE UP ₹ 0.05 BONUS"
         android:textAlignment="gravity"
@@ -188,7 +188,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewLabelTime"
-        style="@style/TextView.Medium.ssp_12"
+        style="@style/TextView.Medium.ssp_11"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"

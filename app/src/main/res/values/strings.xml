@@ -15,7 +15,7 @@
     <string name="validation_bank_name">Please enter bank name</string>
     <string name="validation_account_number">Please enter account number</string>
     <string name="validation_confirm_account_number">Please enter confirm account number</string>
-    <string name="validation_account_number_match">Password account number and confirm account number not matched</string>
+    <string name="validation_account_number_match">Account number and confirm account number not matched</string>
     <string name="validation_account_number_contains_minimum_15_characters">Please enter minimum 15 characters for account number</string>
     <string name="validation_account_name">Please enter account name</string>
     <string name="validation_sort_code">Please enter IFSC code</string>
