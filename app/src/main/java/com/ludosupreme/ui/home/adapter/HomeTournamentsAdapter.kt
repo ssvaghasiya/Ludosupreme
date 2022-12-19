@@ -3,6 +3,7 @@ package com.ludosupreme.ui.home.adapter
 import android.os.CountDownTimer
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.ludosupreme.R
 import com.ludosupreme.databinding.ThirdItemBinding
 import com.ludosupreme.extenstions.viewGone
@@ -26,42 +27,71 @@ class HomeTournamentsAdapter(var onRecycleItemClickWithPosition: OnRecycleItemCl
 
         fun bindData(holder: ViewHolder, item: TournamentsData) = with(viewBinding) {
             item.apply {
-                if (timer != null) {
-                    timer?.cancel()
-                }
-                timer = object : CountDownTimer(timeMillis, 1000) {
-                    override fun onTick(millisUntilFinished: Long) {
-                        timeMillis = millisUntilFinished
-                        val minutes: Long =
-                            TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) - TimeUnit.HOURS.toMinutes(
-                                TimeUnit.MILLISECONDS.toHours(millisUntilFinished)
-                            )
-                        val seconds: Long =
-                            TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(
-                                TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)
-                            )
-
-                        textViewLabelTime.text = String.format("%2dM : %2dS", minutes, seconds)
-                    }
-
-                    override fun onFinish() {
+                if (!isFinished) {
+                    if (timer != null) {
                         timer?.cancel()
-                        isFinished = true
-                        notifyItemChanged(adapterPosition)
                     }
-                }.start()
+                    timer = object : CountDownTimer(timeMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            timeMillis = millisUntilFinished
+                            val minutes: Long =
+                                TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) - TimeUnit.HOURS.toMinutes(
+                                    TimeUnit.MILLISECONDS.toHours(millisUntilFinished)
+                                )
+                            val seconds: Long =
+                                TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(
+                                    TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)
+                                )
 
+                            textViewLabelTime.text = String.format("%2dM : %2dS", minutes, seconds)
+                        }
 
-                val i1: Int = Random().nextInt(500 - 1) + 28
-                textViewLabelCount.text = i1.toString()
+                        override fun onFinish() {
+                            timer?.cancel()
+                            isFinished = true
+                            timer = null
+//                            notifyItemChanged(adapterPosition)
+                        }
+                    }.start()
+                }
 
-                if (isFinished) {
+                if (userCount == 0) {
+                    val i1: Int = Random().nextInt(500 - 1) + 28
+                    userCount = i1
+                }
+                textViewLabelCount.text = userCount.toString()
+                textViewLabelPlayer.text = player
+                textViewPrizePool.text = prizePool
+                textViewPriceEntry.text = entry
+
+                imageViewDropDown.setOnClickListener {
+                    constraintLayoutPrizePoolData.isSelected =
+                        !constraintLayoutPrizePoolData.isSelected
+                    if (constraintLayoutPrizePoolData.isSelected) {
+                        val lparam =
+                            constraintLayoutParent.layoutParams as ConstraintLayout.LayoutParams
+                        lparam.matchConstraintPercentHeight =
+                            root.context.resources.getDimensionPixelSize(com.intuit.sdp.R.dimen._320sdp)
+                                .toFloat()
+                        constraintLayoutParent.layoutParams = lparam
+                        constraintLayoutPrizePoolData.viewShow()
+                    } else {
+                        val lparam =
+                            constraintLayoutParent.layoutParams as ConstraintLayout.LayoutParams
+                        lparam.matchConstraintPercentHeight =
+                            root.context.resources.getDimensionPixelSize(com.intuit.sdp.R.dimen._150sdp)
+                                .toFloat()
+                        constraintLayoutParent.layoutParams = lparam
+                        constraintLayoutPrizePoolData.viewGone()
+                    }
+                }
+                /*if (isFinished) {
                     imageViewRupee.viewGone()
                     textViewPriceEntry.text = "Join"
                 } else {
                     imageViewRupee.viewShow()
                     textViewPriceEntry.text = "5"
-                }
+                }*/
             }
         }
     }

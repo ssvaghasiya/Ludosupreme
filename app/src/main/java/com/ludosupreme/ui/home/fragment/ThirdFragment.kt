@@ -60,20 +60,24 @@ class ThirdFragment : BaseFragment(), View.OnClickListener {
                 })
         recyclerViewTournaments.adapter = homeTournamentsAdapter
         homeTournamentsAdapter.items = ArrayList()
-        (recyclerViewTournaments?.itemAnimator as SimpleItemAnimator).supportsChangeAnimations =
-            false
+//        (recyclerViewTournaments?.itemAnimator as SimpleItemAnimator).supportsChangeAnimations =
+//            false
 
-        homeTournamentsAdapter.items?.add(TournamentsData(120000))
-        homeTournamentsAdapter.items?.add(TournamentsData(120000))
-        homeTournamentsAdapter.items?.add(TournamentsData(120000))
+        homeTournamentsAdapter.items?.add(TournamentsData("4 player-3 winner","5000","18000","8000","6000","4000","0",120000))
+        homeTournamentsAdapter.items?.add(TournamentsData("2 player- 1 winner","2000","3500","3500","0",null,null,120000))
+        homeTournamentsAdapter.items?.add(TournamentsData("4 player-3 winner","1500","5500","2300","1800","1400","0",120000))
+        homeTournamentsAdapter.items?.add(TournamentsData("4 player-3 winner","1000","3700","1500","1300","900","0",120000))
 
-        homeTournamentsAdapter.items?.add(TournamentsData(120000))
-        homeTournamentsAdapter.items?.add(TournamentsData(120000))
-        homeTournamentsAdapter.items?.add(TournamentsData(120000))
+        homeTournamentsAdapter.items?.add(TournamentsData("4 player-3 winner","200","750","350","250","150","0",120000))
+        homeTournamentsAdapter.items?.add(TournamentsData("4 player-3 winner","400","1500","650","500","350","0",120000))
+        homeTournamentsAdapter.items?.add(TournamentsData("2 player- 1 winner","500","900","900","0",null,null,120000))
+        homeTournamentsAdapter.items?.add(TournamentsData("2 player- 1 winner","800","1400","1400","0",null,null,120000))
+        homeTournamentsAdapter.items?.add(TournamentsData("2 player- 1 winner","900","1700","1700","0",null,null,120000))
+        homeTournamentsAdapter.items?.add(TournamentsData("2 player- 1 winner","1100","2090","2090","0",null,null,120000))
+        homeTournamentsAdapter.items?.add(TournamentsData("2 player- 1 winner","2500","4800","4800","0",null,null,120000))
+        homeTournamentsAdapter.items?.add(TournamentsData("2 player- 1 winner","4000","7750","7750","0",null,null,120000))
+        homeTournamentsAdapter.items?.add(TournamentsData("2 player- 1 winner","8000","15600","15600","0",null,null,120000))
 
-        homeTournamentsAdapter.items?.add(TournamentsData(120000))
-        homeTournamentsAdapter.items?.add(TournamentsData(120000))
-        homeTournamentsAdapter.items?.add(TournamentsData(120000))
         homeTournamentsAdapter.notifyDataSetChanged()
     }
 
