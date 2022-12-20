@@ -18,7 +18,9 @@ class TransactionHistoryAdapter(var onRecycleItemClickWithPosition: OnRecycleIte
         private val viewBinding = TransactionHistoryItemBinding.bind(view)
         fun bindData(item: TransactionHistoryData) = with(viewBinding) {
             item.apply {
-
+                textViewLabelPrizePool.text = upi
+                textViewLabelEntry.text = "Withdrawal : $amount"
+                textViewLabelEntryBonus.text = time
             }
         }
     }
