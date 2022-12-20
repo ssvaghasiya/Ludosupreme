@@ -314,7 +314,7 @@ class SecondFragment : BaseFragment(), View.OnClickListener {
             }
         }
         if (handler != null && runnable != null) {
-            handler!!.postDelayed(runnable!!, 3000)
+            handler!!.postDelayed(runnable!!, 500)
         }
 
     }
