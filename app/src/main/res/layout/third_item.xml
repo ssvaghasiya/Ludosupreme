@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayoutParent"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/_150sdp"
+    android:layout_height="wrap_content"
     android:layout_marginVertical="@dimen/_10sdp"
     android:animateLayoutChanges="true"
-    android:background="@color/colorAccent">
+    android:background="@drawable/bg_round_white_light">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
@@ -191,10 +191,11 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageViewCircle"
-        android:layout_width="@dimen/_80sdp"
-        android:layout_height="@dimen/_80sdp"
-        android:layout_marginBottom="@dimen/_minus32sdp"
-        android:src="@drawable/bg_circle_white"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_42sdp"
+        android:rotation="180"
+        android:src="@drawable/ic_half_circle"
+        android:tint="#B8C5D6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

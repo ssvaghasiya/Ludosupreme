@@ -119,4 +119,9 @@ dependencies {
     def multidex_version = "2.0.1"
     implementation "androidx.multidex:multidex:$multidex_version"
 
+    //payu
+    implementation 'in.payu:payu-checkout-pro:1.8.2'
+
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+
 }

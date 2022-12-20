@@ -1,0 +1,144 @@
+{
+  "tournaments": [
+    {
+      "entry": "5000",
+      "isFinished": false,
+      "player": "4 player-3 winner",
+      "prizePool": "18000",
+      "rank1": "8000",
+      "rank2": "6000",
+      "rank3": "4000",
+      "rank4": "0",
+      "time": 120000,
+      "userCount": 0
+    },
+    {
+      "entry": "2000",
+      "isFinished": false,
+      "player": "2 player- 1 winner",
+      "prizePool": "3500",
+      "rank1": "3500",
+      "rank2": "0",
+      "time": 120000,
+      "userCount": 0
+    },
+    {
+      "entry": "1500",
+      "isFinished": false,
+      "player": "4 player-3 winner",
+      "prizePool": "5500",
+      "rank1": "2300",
+      "rank2": "1800",
+      "rank3": "1400",
+      "rank4": "0",
+      "time": 120000,
+      "userCount": 0
+    },
+    {
+      "entry": "1000",
+      "isFinished": false,
+      "player": "4 player-3 winner",
+      "prizePool": "3700",
+      "rank1": "1500",
+      "rank2": "1300",
+      "rank3": "900",
+      "rank4": "0",
+      "time": 120000,
+      "userCount": 0
+    },
+    {
+      "entry": "200",
+      "isFinished": false,
+      "player": "4 player-3 winner",
+      "prizePool": "750",
+      "rank1": "350",
+      "rank2": "250",
+      "rank3": "150",
+      "rank4": "0",
+      "time": 120000,
+      "userCount": 0
+    },
+    {
+      "entry": "400",
+      "isFinished": false,
+      "player": "4 player-3 winner",
+      "prizePool": "1500",
+      "rank1": "650",
+      "rank2": "500",
+      "rank3": "350",
+      "rank4": "0",
+      "time": 120000,
+      "userCount": 0
+    },
+    {
+      "entry": "500",
+      "isFinished": false,
+      "player": "2 player- 1 winner",
+      "prizePool": "900",
+      "rank1": "900",
+      "rank2": "0",
+      "time": 120000,
+      "userCount": 0
+    },
+    {
+      "entry": "800",
+      "isFinished": false,
+      "player": "2 player- 1 winner",
+      "prizePool": "1400",
+      "rank1": "1400",
+      "rank2": "0",
+      "time": 120000,
+      "userCount": 0
+    },
+    {
+      "entry": "900",
+      "isFinished": false,
+      "player": "2 player- 1 winner",
+      "prizePool": "1700",
+      "rank1": "1700",
+      "rank2": "0",
+      "time": 120000,
+      "userCount": 0
+    },
+    {
+      "entry": "1100",
+      "isFinished": false,
+      "player": "2 player- 1 winner",
+      "prizePool": "2090",
+      "rank1": "2090",
+      "rank2": "0",
+      "time": 120000,
+      "userCount": 0
+    },
+    {
+      "entry": "2500",
+      "isFinished": false,
+      "player": "2 player- 1 winner",
+      "prizePool": "4800",
+      "rank1": "4800",
+      "rank2": "0",
+      "time": 120000,
+      "userCount": 0
+    },
+    {
+      "entry": "4000",
+      "isFinished": false,
+      "player": "2 player- 1 winner",
+      "prizePool": "7750",
+      "rank1": "7750",
+      "rank2": "0",
+      "time": 120000,
+      "userCount": 0
+    },
+    {
+      "entry": "8000",
+      "isFinished": false,
+      "player": "2 player- 1 winner",
+      "prizePool": "15600",
+      "rank1": "15600",
+      "rank2": "0",
+      "time": 120000,
+      "userCount": 0
+    }
+  ]
+}

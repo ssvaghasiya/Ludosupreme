@@ -77,11 +77,8 @@ class SecondFragment : BaseFragment(), View.OnClickListener {
                 R.color.white
             ), ContextCompat.getColor(requireContext(), R.color.colorAccent)
         )
-        recyclerViewLudo.addItemDecoration(circlePagerIndicatorDecoration)
+//        recyclerViewLudo.addItemDecoration(circlePagerIndicatorDecoration)
 
-        adsAdapter.items?.add("")
-        adsAdapter.items?.add("")
-        adsAdapter.items?.add("")
         adsAdapter.items?.add("")
         adsAdapter.notifyDataSetChanged()
     }

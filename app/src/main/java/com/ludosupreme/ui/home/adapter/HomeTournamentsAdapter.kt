@@ -3,29 +3,28 @@ package com.ludosupreme.ui.home.adapter
 import android.os.CountDownTimer
 import android.view.View
 import android.view.ViewGroup
-import androidx.constraintlayout.widget.ConstraintLayout
 import com.ludosupreme.R
 import com.ludosupreme.databinding.ThirdItemBinding
 import com.ludosupreme.extenstions.viewGone
 import com.ludosupreme.extenstions.viewShow
+import com.ludosupreme.ui.authentication.model.TournamentData
 import com.ludosupreme.ui.base.adapters.AdvanceRecycleViewAdapter
 import com.ludosupreme.ui.base.adapters.BaseHolder
 import com.ludosupreme.ui.base.adapters.OnRecycleItemClickWithPosition
-import com.ludosupreme.ui.home.model.TournamentsData
 import java.util.*
 import java.util.concurrent.TimeUnit
 
 
-class HomeTournamentsAdapter(var onRecycleItemClickWithPosition: OnRecycleItemClickWithPosition<TournamentsData>) :
-    AdvanceRecycleViewAdapter<HomeTournamentsAdapter.ViewHolder, TournamentsData>() {
+class HomeTournamentsAdapter(var onRecycleItemClickWithPosition: OnRecycleItemClickWithPosition<TournamentData>) :
+    AdvanceRecycleViewAdapter<HomeTournamentsAdapter.ViewHolder, TournamentData>() {
 
     var timeMillis: Long = 120000
 
-    inner class ViewHolder(view: View) : BaseHolder<TournamentsData>(view) {
+    inner class ViewHolder(view: View) : BaseHolder<TournamentData>(view) {
         private val viewBinding = ThirdItemBinding.bind(view)
         var timer: CountDownTimer? = null
 
-        fun bindData(holder: ViewHolder, item: TournamentsData) = with(viewBinding) {
+        fun bindData(holder: ViewHolder, item: TournamentData) = with(viewBinding) {
             item.apply {
                 if (!isFinished) {
                     if (timer != null) {
@@ -50,7 +49,6 @@ class HomeTournamentsAdapter(var onRecycleItemClickWithPosition: OnRecycleItemCl
                             timer?.cancel()
                             isFinished = true
                             timer = null
-//                            notifyItemChanged(adapterPosition)
                         }
                     }.start()
                 }
@@ -68,20 +66,8 @@ class HomeTournamentsAdapter(var onRecycleItemClickWithPosition: OnRecycleItemCl
                     constraintLayoutPrizePoolData.isSelected =
                         !constraintLayoutPrizePoolData.isSelected
                     if (constraintLayoutPrizePoolData.isSelected) {
-                        val lparam =
-                            constraintLayoutParent.layoutParams as ConstraintLayout.LayoutParams
-                        lparam.matchConstraintPercentHeight =
-                            root.context.resources.getDimensionPixelSize(com.intuit.sdp.R.dimen._320sdp)
-                                .toFloat()
-                        constraintLayoutParent.layoutParams = lparam
                         constraintLayoutPrizePoolData.viewShow()
                     } else {
-                        val lparam =
-                            constraintLayoutParent.layoutParams as ConstraintLayout.LayoutParams
-                        lparam.matchConstraintPercentHeight =
-                            root.context.resources.getDimensionPixelSize(com.intuit.sdp.R.dimen._150sdp)
-                                .toFloat()
-                        constraintLayoutParent.layoutParams = lparam
                         constraintLayoutPrizePoolData.viewGone()
                     }
                 }
@@ -104,7 +90,7 @@ class HomeTournamentsAdapter(var onRecycleItemClickWithPosition: OnRecycleItemCl
     override fun onBindDataHolder(
         holder: ViewHolder,
         position: Int,
-        item: TournamentsData
+        item: TournamentData
     ) {
         holder.bindData(holder, item)
     }
