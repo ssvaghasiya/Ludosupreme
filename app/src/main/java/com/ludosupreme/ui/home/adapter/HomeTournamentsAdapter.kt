@@ -24,7 +24,7 @@ class HomeTournamentsAdapter(var onRecycleItemClickWithPosition: OnRecycleItemCl
         private val viewBinding = ThirdItemBinding.bind(view)
         var timer: CountDownTimer? = null
 
-        fun bindData(holder: ViewHolder, item: TournamentData) = with(viewBinding) {
+        fun bindData(item: TournamentData) = with(viewBinding) {
             item.apply {
                 if (!isFinished) {
                     if (timer != null) {
@@ -66,10 +66,16 @@ class HomeTournamentsAdapter(var onRecycleItemClickWithPosition: OnRecycleItemCl
                     constraintLayoutPrizePoolData.isSelected =
                         !constraintLayoutPrizePoolData.isSelected
                     if (constraintLayoutPrizePoolData.isSelected) {
+                        imageViewDropDown.rotation = 180F
                         constraintLayoutPrizePoolData.viewShow()
                     } else {
+                        imageViewDropDown.rotation = 0F
                         constraintLayoutPrizePoolData.viewGone()
                     }
+                }
+
+                constraintLayoutPrizePool.setOnClickListener {
+                    onRecycleItemClickWithPosition.onClick(item, it, absoluteAdapterPosition)
                 }
                 /*if (isFinished) {
                     imageViewRupee.viewGone()
@@ -92,7 +98,7 @@ class HomeTournamentsAdapter(var onRecycleItemClickWithPosition: OnRecycleItemCl
         position: Int,
         item: TournamentData
     ) {
-        holder.bindData(holder, item)
+        holder.bindData(item)
     }
 
 

@@ -1,5 +1,6 @@
 package com.ludosupreme.ui.base.adapters
 
+import android.R
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +10,6 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
-import com.ludosupreme.R
 
 
 abstract class AdvanceRecycleViewAdapter<H : BaseHolder<E>, E> :
@@ -269,14 +269,11 @@ abstract class AdvanceRecycleViewAdapter<H : BaseHolder<E>, E> :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseHolder<E> {
 
-        val baseHolder: BaseHolder<E>
-
-        if (viewType == 333)
-            baseHolder = createLoadingHolder(parent, viewType)
-        else if (viewType == 111)
-            baseHolder = createNoDataHolder(parent)
-        else
-            baseHolder = createDataHolder(parent, viewType)
+        val baseHolder: BaseHolder<E> = when (viewType) {
+            333 -> createLoadingHolder(parent, viewType)
+            111 -> createNoDataHolder(parent)
+            else -> createDataHolder(parent, viewType)
+        }
 
         baseHolder.hasItem = this
 
@@ -299,11 +296,13 @@ abstract class AdvanceRecycleViewAdapter<H : BaseHolder<E>, E> :
         )
 
         textView.layoutParams = layoutParams
+
+        //View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_no_data, parent, false);
         return NoDataHolder(textView)
     }
 
     fun createLoadingHolder(parent: ViewGroup, viewType: Int): LoadingHolder<E> {
-        val progressBar = ProgressBar(parent.context, null, android.R.attr.progressBarStyleSmall)
+        val progressBar = ProgressBar(parent.context, null, R.attr.progressBarStyleSmall)
 
         val layoutParams = parent.layoutParams
         layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT

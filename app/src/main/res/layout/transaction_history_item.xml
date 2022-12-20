@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayoutParent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_10sdp"
+    android:layout_marginEnd="@dimen/_12sdp"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/bg_round_white_light"
+    android:paddingHorizontal="@dimen/_16sdp"
+    android:paddingVertical="@dimen/_14sdp">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabelPrizePool"
+        style="@style/TextView.Medium.ssp_13.white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Hemil****@paytm"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toTopOf="@+id/textViewLabelEntry"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabelEntry"
+        style="@style/TextView.Medium.ssp_11.white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:gravity="center"
+        android:text="Withdrawal : 5000"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toTopOf="@+id/textViewLabelEntryBonus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelPrizePool" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabelEntryBonus"
+        style="@style/TextView.Medium.ssp_9.white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:gravity="center"
+        android:text="19 min ago"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelEntry" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
